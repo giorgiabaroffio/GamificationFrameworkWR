@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.utility.rtx.db.SelectorUnitService" name="Action">
+  <MaxResults/>
+  <Query entity="ent1">
+    <Input id="p0" param="acond5g" type="string" implied="false" expandStyle="in" function="upper" attribute="att12"/>
+    <Output id="att1" name="oid" index="0"/>
+    <Output id="att2" name="name" index="1"/>
+    <HQL>select a_actionType.oid, a_actionType.name from ActionType a_actionType
+      <Where defaultPolicy="fill" allImplied="false">([(a_actionType.oid in( select a_actionType_2.oid from ActionType a_actionType_2 inner join a_actionType_2.actiontypeToGamifiedapplication s_thematicArea_role1 where ({[p0]upper(safe_cast(s_thematicArea_role1.name)) in(?)})))])</Where>
+    </HQL>
+  </Query>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Action</ModelName>
+    <ParentContainer>opm2g</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="seu1g">acond5g</OperationParam>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln10g</Link>
+      <Link resultCode="success" transport="true">ln10g</Link>
+      <Link resultCode="error" transport="true">ln10g</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

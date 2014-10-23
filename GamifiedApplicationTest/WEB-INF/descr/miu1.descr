@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.module.rtx.ModuleInstanceUnitService" name="">
+  <Module operation="true" singleLayout="false">opm2</Module>
+  <InputCollectorId>icu2</InputCollectorId>
+  <InputParameter>icp1</InputParameter>
+  <InputParameter>icp2</InputParameter>
+  <InputParameter>icp3</InputParameter>
+  <InputParameter>icp4</InputParameter>
+  <InputParameter>icp46g</InputParameter>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName/>
+    <ParentContainer>sv1</ParentContainer>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="miu1">miu1.icp3</OperationParam>
+      <OperationParam unit="miu1">miu1.icp2</OperationParam>
+      <OperationParam unit="miu1">miu1.icp1</OperationParam>
+      <OperationParam unit="miu1">miu1.icp4</OperationParam>
+      <Params>miu2g.icp15g|sp|sfld2_output|miu2g.icp14g|link|sfld1g_label|fld5_slot|cmplink|sfld1_output|sfld2_label|pcp1|sfld1g_output|smc|rcond1.att11|sfld1_label</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln4</Link>
+      <Link resultCode="error">kln5g</Link>
+    </OutgoingLinks>
+    <IsLinkHistoryRecorded>true</IsLinkHistoryRecorded>
+  </WRParameterService>
+</Descriptor>

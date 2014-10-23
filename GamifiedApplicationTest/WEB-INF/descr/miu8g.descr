@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.module.rtx.ModuleInstanceUnitService" name="">
+  <Module operation="true" singleLayout="false">opm11g</Module>
+  <InputCollectorId>icu11g</InputCollectorId>
+  <InputParameter>icp49g</InputParameter>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName/>
+    <ParentContainer>area1g</ParentContainer>
+    <NavigationAncestors>sv1|area1g</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="miu8g">miu8g.icp49g</OperationParam>
+      <Params>cru4g.att13g|pwu4g.newSortAttribute|sp|cru4g.att16g|cmplink|cru4g.att14g|link|cru4g.att15g|pwu4g.sortCriteria|smc</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln45g</Link>
+      <Link resultCode="error">kln12g</Link>
+    </OutgoingLinks>
+    <IsLinkHistoryRecorded>true</IsLinkHistoryRecorded>
+  </WRParameterService>
+</Descriptor>

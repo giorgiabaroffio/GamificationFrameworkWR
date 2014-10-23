@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.utility.rtx.db.SelectorUnitService" name="Comment">
+  <MaxResults/>
+  <Query entity="ent1g">
+    <Output id="att1g" name="oid" index="0"/>
+    <Output id="att2g" name="text" index="1"/>
+    <HQL>select a_postForum.oid, a_postForum.text from PostForum a_postForum</HQL>
+  </Query>
+</Descriptor>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.content.rtx.db.PowerIndexUnitService" name="Available Credits">
+  <Results maxResults="" blockFactor="" blockWindow=""/>
+  <SortHistorySize>1</SortHistorySize>
+  <Checkable>false</Checkable>
+  <Query entity="ent5g">
+    <Output id="att17g" name="oid" index="0"/>
+    <Output id="att18g" name="userEmail" index="1"/>
+    <Output id="att19g" name="creditsAvailable" index="2"/>
+    <HQL>select a_redeemUserReward.oid, a_redeemUserReward.userEmail, a_redeemUserReward.creditsAvailable from RedeemUserReward a_redeemUserReward order by $$SORT_CRITERIA$$</HQL>
+  </Query>
+  <SortAttributes>
+    <Attribute id="att18g" dynamic="true" order="asc">a_redeemUserReward.userEmail</Attribute>
+    <Attribute id="att19g" dynamic="true" order="asc">a_redeemUserReward.creditsAvailable</Attribute>
+    <Attribute id="att18g" dynamic="false" order="asc">a_redeemUserReward.userEmail</Attribute>
+    <Attribute id="att19g" dynamic="false" order="asc">a_redeemUserReward.creditsAvailable</Attribute>
+  </SortAttributes>
+</Descriptor>

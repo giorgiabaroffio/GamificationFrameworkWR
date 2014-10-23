@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.utility.rtx.db.SelectorUnitService" name="Select User">
+  <MaxResults/>
+  <Query entity="User">
+    <Input id="p0" param="kcond3.userOID" type="integer" implied="false" expandStyle="in"/>
+    <Output id="userOID" name="oid" index="0"/>
+    <Output id="userName" name="username" index="1"/>
+    <HQL>select a_user.oid, a_user.username from User a_user
+      <Where defaultPolicy="fill" allImplied="false">(({[p0]a_user.oid in(?)}))</Where>
+    </HQL>
+  </Query>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Select User</ModelName>
+    <ParentContainer>opg2</ParentContainer>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="seu1">kcond3.userOID</OperationParam>
+      <Params>link|acond3|sfld6_presel|fld17_slot|fld12_slot|pwu1.newSortAttribute|fld18_slot|fld10_slot|cmplink|fld24_slot|fld4_slot|fld26_slot|fld19_slot|pcp13|pcp12|pcp10|kcond4.userOID|fld21_slot|pcp14|sp|pcp15|pcp9|sfld5_presel|pcp6|fld22_slot|pcp5|pcp8|mssu2.shownMessages|pwu1.sortCriteria|fld20_slot|pcp7|fld11_slot|fld23_slot|pcp2|fld16_slot|pcp4|pcp3|pwu1.block|smc</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln32</Link>
+      <Link resultCode="success" transport="true">ln14</Link>
+      <Link resultCode="error" transport="true">ln14</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

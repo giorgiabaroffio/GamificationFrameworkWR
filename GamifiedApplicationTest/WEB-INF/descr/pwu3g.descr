@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.content.rtx.db.PowerIndexUnitService" name="User Credits">
+  <Results maxResults="" blockFactor="" blockWindow=""/>
+  <SortHistorySize>1</SortHistorySize>
+  <Checkable>false</Checkable>
+  <Query entity="ent3g">
+    <Output id="att3g" name="oid" index="0"/>
+    <Output id="att11g" name="totalCredit" index="1"/>
+    <Output id="att10g" name="creditSpent" index="2"/>
+    <Output id="att9g" name="creditAvailable" index="3"/>
+    <Output id="att4g" name="userEmail" index="4"/>
+    <HQL>select a_getUserCredits.oid, a_getUserCredits.totalCredit, a_getUserCredits.creditSpent, a_getUserCredits.creditAvailable, a_getUserCredits.userEmail from GetUserCredits a_getUserCredits</HQL>
+  </Query>
+  <SortAttributes></SortAttributes>
+</Descriptor>

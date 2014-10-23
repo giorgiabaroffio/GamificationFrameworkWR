@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.module.rtx.ModuleInstanceUnitService" name="">
+  <Module operation="true" singleLayout="false">opm4g</Module>
+  <InputCollectorId>icu4g</InputCollectorId>
+  <InputParameter>icp29g</InputParameter>
+  <InputParameter>icp30g</InputParameter>
+  <InputParameter>icp31g</InputParameter>
+  <InputParameter>icp32g</InputParameter>
+  <InputParameter>icp33g</InputParameter>
+  <InputParameter>icp34g</InputParameter>
+  <InputParameter>icp35g</InputParameter>
+  <InputParameter>icp36g</InputParameter>
+  <InputParameter>icp37g</InputParameter>
+  <InputParameter>icp38g</InputParameter>
+  <InputParameter>icp39g</InputParameter>
+  <InputParameter>icp40g</InputParameter>
+  <InputParameter>icp41g</InputParameter>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName/>
+    <ParentContainer>opg1</ParentContainer>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="miu3">miu3.icp41g</OperationParam>
+      <OperationParam unit="miu3">miu3.icp31g</OperationParam>
+      <OperationParam unit="miu3">miu3.icp40g</OperationParam>
+      <OperationParam unit="miu3">miu3.icp30g</OperationParam>
+      <OperationParam unit="miu3">miu3.icp39g</OperationParam>
+      <OperationParam unit="miu3">miu3.icp38g</OperationParam>
+      <OperationParam unit="miu3">miu3.icp29g</OperationParam>
+      <OperationParam unit="miu3">miu3.icp37g</OperationParam>
+      <OperationParam unit="miu3">miu3.icp36g</OperationParam>
+      <OperationParam unit="miu3">miu3.icp35g</OperationParam>
+      <OperationParam unit="miu3">miu3.icp32g</OperationParam>
+      <OperationParam unit="miu3">miu3.icp33g</OperationParam>
+      <OperationParam unit="miu3">miu3.icp34g</OperationParam>
+      <Params>link|sfld6_presel|fld17_slot|fld12_slot|pwu1.newSortAttribute|fld18_slot|fld10_slot|cmplink|fld24_slot|fld4_slot|fld26_slot|fld19_slot|pcp13|pcp12|pcp11|pcp10|fld21_slot|pcp14|sp|pcp15|pcp9|sfld5_presel|pcp6|fld22_slot|pcp5|pwu1.sortCriteria|pcp8|mssu2.shownMessages|fld20_slot|pcp7|fld11_slot|fld23_slot|pcp2|fld16_slot|pcp4|pcp3|pwu1.block|smc|kcond3.userOID</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln26</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

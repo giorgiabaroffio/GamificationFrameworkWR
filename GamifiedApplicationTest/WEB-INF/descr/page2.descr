@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultPageService" name="Manage Users">
+  <ParentContainer>sv1</ParentContainer>
+  <Secure>false</Secure>
+  <Localized>false</Localized>
+  <CheckPermission>false</CheckPermission>
+  <Alternatives/>
+  <ProtectedSubPages/>
+  <Navigations knownEffects="#pr#">
+    <Navigation name="0" nonContextual="true" interPage="always" links="page2"/>
+    <Navigation name="1" nonContextual="true" interPage="always" links="page2.link"/>
+    <Navigation name="2" links="page2.auto-link"/>
+    <Navigation name="3" links="page2.auto-link" selectiveRefresh="true"/>
+    <Navigation name="4" links="ln11|validation-failed"/>
+    <Navigation name="5" links="ln11|impl" postPropagatedLink="ln11"/>
+    <Navigation name="6" links="ln11|oln10"/>
+    <Navigation name="7" links="ln11|oln26"/>
+    <Navigation name="8" links="ln11|oln4g"/>
+    <Navigation name="9" links="ln1g|ln2g"/>
+    <Navigation name="10" links="ln1g|ln2g" selectiveRefresh="true"/>
+    <Navigation name="11" links="ln22|impl" postPropagatedLink="ln22"/>
+    <Navigation name="12" links="ln22|oln28" effects="#pr#"/>
+    <Navigation name="13" interPage="always" links="ln2g"/>
+    <Navigation name="14" interPage="always" links="ln30|oln10"/>
+    <Navigation name="15" interPage="always" links="ln30|oln26"/>
+    <Navigation name="16" interPage="always" links="ln30|oln4g"/>
+    <Navigation name="17" links="ln32|ln30|oln10"/>
+    <Navigation name="18" links="ln32|ln30|oln26"/>
+    <Navigation name="19" links="ln32|ln30|oln4g"/>
+    <Navigation name="20" links="ln33|impl" postPropagatedLink="ln33"/>
+    <Navigation name="21" links="ln33|oln14" effects="#pr#"/>
+    <Navigation name="22" interPage="always" links="ln3g|ln30|oln10"/>
+    <Navigation name="23" interPage="always" links="ln3g|ln30|oln26"/>
+    <Navigation name="24" interPage="always" links="ln3g|ln30|oln4g"/>
+    <Navigation name="25" interPage="always" links="pcu3.enter|oln10"/>
+    <Navigation name="26" interPage="always" links="pcu3.enter|oln26"/>
+    <Navigation name="27" interPage="always" links="pcu3.enter|oln4g"/>
+    <Navigation name="28" links="pwu1Block"/>
+    <Navigation name="29" links="pwu1Block" selectiveRefresh="true"/>
+    <Navigation name="30" links="pwu1First"/>
+    <Navigation name="31" links="pwu1First" selectiveRefresh="true"/>
+    <Navigation name="32" links="pwu1Last"/>
+    <Navigation name="33" links="pwu1Last" selectiveRefresh="true"/>
+    <Navigation name="34" links="pwu1Next"/>
+    <Navigation name="35" links="pwu1Next" selectiveRefresh="true"/>
+    <Navigation name="36" links="pwu1Previous"/>
+    <Navigation name="37" links="pwu1Previous" selectiveRefresh="true"/>
+    <Navigation name="38" links="pwu1att13"/>
+    <Navigation name="39" links="pwu1att13" selectiveRefresh="true"/>
+    <Navigation name="40" links="pwu1att14"/>
+    <Navigation name="41" links="pwu1att14" selectiveRefresh="true"/>
+  </Navigations>
+  <ContextInitServices/>
+  <ContextInits></ContextInits>
+  <UselessPreserves>
+    <UselessPreserve navs="19|17|18|36|34|28|11|38|20|2|7|30|6|5|32|40|4|9|8" effects="-" futile=""/>
+    <UselessPreserve navs="19|17|18|36|34|28|11|38|20|7|30|6|5|32|40|4|9|8" effects="#pr#" futile=""/>
+    <UselessPreserve navs="10" effects="#pr#" futile="pwu1.block|pwu1.newSortAttribute|mssu2.shownMessages|pwu1.sortCriteria"/>
+    <UselessPreserve navs="3|10" effects="-" futile="pwu1.block|pwu1.newSortAttribute|mssu2.shownMessages|pwu1.sortCriteria"/>
+    <UselessPreserve navs="21|12" effects="-" futile="pwu1.block|pwu1.newSortAttribute|pwu1.sortCriteria"/>
+    <UselessPreserve navs="3|21|2|12" effects="#pr#" futile="pwu1.block|pwu1.newSortAttribute|pwu1.sortCriteria"/>
+    <UselessPreserve navs="41|31|35|33|39|37|29" futile="mssu2.shownMessages"/>
+  </UselessPreserves>
+  <LinkSequence>ln34</LinkSequence>
+  <UnitComputations>
+    <UnitComputation unit="pwu1" formBased="true">
+      <NavigationCondition selectiveRefresh="true" navs="3|41|31|35|33|39|37|29" effects="#pr#"/>
+      <NavigationCondition selectiveRefresh="true" navs="41|31|35|33|39|37|29" effects="-"/>
+      <RefreshFormAll navs="19|23|18|15|24|16|26|27|11|12|21|20|1|0|7|5|8"/>
+      <RefreshForm selectiveRefresh="true" navs="41|39" inputs="pwu1.newSortAttribute|pwu1.sortCriteria"/>
+      <RefreshForm navs="40|38" inputs="pwu1.newSortAttribute|pwu1.sortCriteria"/>
+      <RefreshForm selectiveRefresh="true" navs="31|35|33|37|29" inputs="pwu1.block"/>
+      <RefreshForm navs="30|32|36|34|28" inputs="pwu1.block"/>
+    </UnitComputation>
+    <UnitComputation unit="enu3" formBased="true">
+      <NavigationCondition selectiveRefresh="true" navs="10" effects="-"/>
+      <NavigationCondition selectiveRefresh="true" navs="3|10" effects="#pr#"/>
+      <RefreshForm selectiveRefresh="true" navs="10" inputs="fld10_slot"/>
+      <RefreshForm navs="9|13" inputs="fld10_slot"/>
+      <RefreshFormAll navs="19|23|18|15|24|16|26|27|11|12|21|20|1|0|7|5|8"/>
+    </UnitComputation>
+    <UnitComputation unit="gctu1">
+      <NavigationCondition selectiveRefresh="true" navs="3" effects="#pr#"/>
+    </UnitComputation>
+    <UnitComputation unit="mssu2">
+      <NavigationCondition selectiveRefresh="true" navs="3" effects="#pr#"/>
+    </UnitComputation>
+  </UnitComputations>
+  <ManualLinks>
+    <ManualLink>ln32</ManualLink>
+    <ManualLink>ln33</ManualLink>
+    <ManualLink>pwu1att13</ManualLink>
+    <ManualLink>pwu1att14</ManualLink>
+    <ManualLink>pwu1First</ManualLink>
+    <ManualLink>pwu1Previous</ManualLink>
+    <ManualLink>pwu1Next</ManualLink>
+    <ManualLink>pwu1Last</ManualLink>
+    <ManualLink>pwu1Block</ManualLink>
+    <ManualLink>ln11</ManualLink>
+    <ManualLink>ln22</ManualLink>
+    <ManualLink>ln1g</ManualLink>
+  </ManualLinks>
+  <PropagationModes client="true" server="true"/>
+  <Variables></Variables>
+  <Conditions></Conditions>
+  <Layouts>
+    <Layout id="page2_grid_0">
+      <Layout id="page2_cell_0">
+        <Layout id="mssu2_0" unitId="mssu2"></Layout>
+      </Layout>
+      <Layout id="page2_cell_12">
+        <Layout id="enu3_0" unitId="enu3"></Layout>
+      </Layout>
+      <Layout id="page2_cell_17">
+        <Layout id="pwu1_0" unitId="pwu1"></Layout>
+      </Layout>
+      <Layout id="page2_cell_24">
+        <Layout id="enu3_1" unitId="enu3"></Layout>
+      </Layout>
+    </Layout>
+  </Layouts>
+  <AutoLinkInfo>
+    <PreservedContextParams>
+      <Params>mssu2.shownMessages|pwu1.block|pwu1.newSortAttribute|pwu1.sortCriteria</Params>
+    </PreservedContextParams>
+    <PreservedContextParams selectiveRefresh="true">
+      <Params>mssu2.shownMessages</Params>
+    </PreservedContextParams>
+  </AutoLinkInfo>
+  <!--Page Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultPageParameterService">
+    <ModelName>Manage Users</ModelName>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <LinkIdRequired>true</LinkIdRequired>
+    <PageParams>
+      <PageParam unit="pwu1">pwu1.block</PageParam>
+      <PageParam unit="pwu1">pwu1.newSortAttribute</PageParam>
+      <PageParam unit="pwu1">pwu1.sortCriteria</PageParam>
+      <PageParam preservedByForm="true" unit="enu3">fld10_slot</PageParam>
+      <PageParam preservedByForm="true" unit="enu3">fld16_slot</PageParam>
+      <PageParam preservedByForm="true" unit="enu3">fld12_slot</PageParam>
+      <PageParam unit="mssu2">mssu2.shownMessages</PageParam>
+      <PageParam preservedByForm="true" formPreserveGroup="sfld5_presel">sfld5_presel</PageParam>
+      <PageParam preservedByForm="true">fld18_slot</PageParam>
+      <PageParam preservedByForm="true">fld22_slot</PageParam>
+      <PageParam preservedByForm="true">fld11_slot</PageParam>
+      <PageParam preservedByForm="true">fld20_slot</PageParam>
+      <PageParam preservedByForm="true">fld4_slot</PageParam>
+      <PageParam preservedByForm="true">fld23_slot</PageParam>
+      <PageParam preservedByForm="true">fld24_slot</PageParam>
+      <PageParam preservedByForm="true">fld19_slot</PageParam>
+      <PageParam preservedByForm="true">fld26_slot</PageParam>
+      <PageParam preservedByForm="true">fld21_slot</PageParam>
+      <PageParam preservedByForm="true">fld17_slot</PageParam>
+      <PageParam preservedByForm="true" formPreserveGroup="sfld6_presel">sfld6_presel</PageParam>
+      <PageParam>kcond3.userOID</PageParam>
+      <PageParam>pcp4</PageParam>
+      <PageParam>pcp3</PageParam>
+      <PageParam>pcp2</PageParam>
+      <PageParam>pcp10</PageParam>
+      <PageParam>pcp13</PageParam>
+      <PageParam>pcp12</PageParam>
+      <PageParam>pcp9</PageParam>
+      <PageParam>pcp8</PageParam>
+      <PageParam>pcp7</PageParam>
+      <PageParam>pcp6</PageParam>
+      <PageParam>pcp5</PageParam>
+      <PageParam>pcp14</PageParam>
+      <PageParam>pcp15</PageParam>
+      <PageParam preservedByForm="true">ciu3gPreload</PageParam>
+      <PageParam>link</PageParam>
+      <PageParam>nav</PageParam>
+      <PageParam>so</PageParam>
+      <PageParam>ajax</PageParam>
+      <PageParam>ajaxRefresh</PageParam>
+    </PageParams>
+  </WRParameterService>
+</Descriptor>

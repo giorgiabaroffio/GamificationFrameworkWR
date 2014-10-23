@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.module.rtx.CollectorUnitService" name="">
+  <Type>INPUT</Type>
+  <Parameter name="Action">icp1</Parameter>
+  <Parameter name="Description">icp2</Parameter>
+  <Parameter name="User Email">icp3</Parameter>
+  <Parameter name="Gamified Application">icp4</Parameter>
+  <Parameter name="Object Key">icp46g</Parameter>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName/>
+    <ParentContainer>opm2</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="icu2">icp1</OperationParam>
+      <OperationParam unit="icu2">icp4</OperationParam>
+      <OperationParam unit="icu2">icp46g</OperationParam>
+      <OperationParam unit="icu2">icp2</OperationParam>
+      <OperationParam unit="icu2">icp3</OperationParam>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln8g</Link>
+      <Link resultCode="success" transport="true">ln9g</Link>
+      <Link resultCode="error" transport="true">ln9g</Link>
+    </OutgoingLinks>
+    <IsLinkHistoryRecorded>true</IsLinkHistoryRecorded>
+  </WRParameterService>
+</Descriptor>

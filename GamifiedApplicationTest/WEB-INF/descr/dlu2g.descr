@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.operation.rtx.db.DeleteUnitService" name="Delete User Credits">
+  <Entity>ent3g</Entity>
+  <CascadeDeleteRoles/>
+  <FetchMode>HQL</FetchMode>
+  <Query entity="ent3g">
+    <Input id="p0" param="acond7g" type="integer" implied="false" attribute="att3g"/>
+    <Output id="att3g" name="oid" index="0"/>
+    <HQL>select a_getUserCredits.oid from GetUserCredits a_getUserCredits
+      <Where defaultPolicy="fill" allImplied="false">((a_getUserCredits.oid is not null))</Where>
+    </HQL>
+  </Query>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Delete User Credits</ModelName>
+    <ParentContainer>area1g</ParentContainer>
+    <NavigationAncestors>sv1|area1g</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <Params>sp|cru3g.att11g|cru3g.att10g|cmplink|link|cru3g.att4g|cru3g.att9g|miu7g.icp48g|smc</Params>
+    </OperationParams>
+    <SecondaryIncomingLinks>ln20g</SecondaryIncomingLinks>
+    <OutgoingLinks>
+      <Link resultCode="success">oln39g</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

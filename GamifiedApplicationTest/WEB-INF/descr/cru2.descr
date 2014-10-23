@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.operation.rtx.db.CreateUnitService" name="Create New User">
+  <Entity>User</Entity>
+  <BulkInsert>false</BulkInsert>
+  <SkipBlankRecords>false</SkipBlankRecords>
+  <Field param="cru2.userOID" type="integer" attribute="userOID">oid</Field>
+  <Field param="cru2.userName" type="string" attribute="userName">username</Field>
+  <Field param="cru2.password" type="password" attribute="password">password</Field>
+  <Field param="cru2.email" type="string" attribute="email">email</Field>
+  <Field param="cru2.att13" type="string" attribute="att13">firstName</Field>
+  <Field param="cru2.att14" type="string" attribute="att14">lastName</Field>
+  <Field param="cru2.att15" type="string" attribute="att15">companyName</Field>
+  <Field param="cru2.att16" type="string" attribute="att16">city</Field>
+  <Field param="cru2.att17" type="string" attribute="att17">twitter</Field>
+  <Field param="cru2.att18" type="string" attribute="att18">country</Field>
+  <Field param="cru2.att19" type="boolean" attribute="att19">certified</Field>
+  <Field param="cru2.att20" type="string" attribute="att20">type</Field>
+  <Field param="cru2.att21" type="string" attribute="att21">geographicalArea</Field>
+  <Field param="cru2.att22" type="boolean" attribute="att22">publicProfile</Field>
+  <Field param="cru2.att23" type="string" attribute="att23">linkedin</Field>
+  <Field param="cru2.att24" type="string" attribute="att24">bio</Field>
+  <Field param="cru2.att25" type="string" attribute="att25">facebook</Field>
+  <Field param="cru2.att26" type="string" attribute="att26">isoCode</Field>
+  <Field param="cru2.att27" type="string" attribute="att27">google</Field>
+  <Field param="cru2.att28" type="boolean" attribute="att28">partner</Field>
+  <Field param="cru2.att29" type="boolean" attribute="att29">internal</Field>
+  <Field param="cru2.att30" type="string" attribute="att30">webSite</Field>
+  <Field param="cru2.att398" type="blob" attribute="att398">smallPhoto</Field>
+  <Field param="cru2.att399" type="blob" attribute="att399">bigPhoto</Field>
+  <Field param="cru2.att31" type="date" attribute="att31">birthDate</Field>
+  <Association name="groups" direct="true" inverseName="users" oneToOne="false" maxCardMany="true">
+    <QueryInput id="oid" param="cru2.User2Group.groupOID" type="integer"/>
+    <Query>from Group _e where _e.oid = :oid</Query>
+  </Association>
+  <Association name="defaultGroup" direct="true" inverseName="defaultUsers" oneToOne="false" maxCardMany="false">
+    <QueryInput id="oid" param="cru2.User2DefaultGroup.groupOID" type="integer"/>
+    <Query>from Group _e where _e.oid = :oid</Query>
+  </Association>
+  <Association name="rankToPostForum" direct="false" inverseName="postForumToRank" oneToOne="false" maxCardMany="true">
+    <QueryInput id="oid" param="cru2.role1g.att1g" type="integer"/>
+    <Query>from PostForum _e where _e.oid = :oid</Query>
+  </Association>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Create New User</ModelName>
+    <ParentContainer>opg1</ParentContainer>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="cru2">cru2.att13</OperationParam>
+      <OperationParam unit="cru2">cru2.att29</OperationParam>
+      <OperationParam unit="cru2">cru2.att14</OperationParam>
+      <OperationParam unit="cru2">cru2.att26</OperationParam>
+      <OperationParam unit="cru2">cru2.att16</OperationParam>
+      <OperationParam unit="cru2">cru2.att18</OperationParam>
+      <OperationParam unit="cru2">cru2.userName</OperationParam>
+      <OperationParam unit="cru2">cru2.password</OperationParam>
+      <OperationParam unit="cru2">cru2.att399</OperationParam>
+      <OperationParam unit="cru2">cru2.att31</OperationParam>
+      <OperationParam unit="cru2">cru2.email</OperationParam>
+      <OperationParam unit="cru2">cru2.att21</OperationParam>
+      <OperationParam unit="cru2">cru2.att22</OperationParam>
+      <Params>sfld6_presel|fld17_slot|fld12_slot|miu3.icp29g|miu3.icp37g|fld4_slot|fld26_slot|miu3.icp33g|pcp13|pcp12|pcp11|pcp10|sp|fld22_slot|mssu2.shownMessages|miu3.icp36g|fld16_slot|miu3.icp32g|pwu1.block|kcond3.userOID|miu3.icp41g|miu3.icp31g|link|pwu1.newSortAttribute|fld18_slot|cmplink|fld10_slot|fld24_slot|miu3.icp35g|fld19_slot|fld21_slot|pcp14|pcp15|miu3.icp40g|miu3.icp30g|miu3.icp39g|miu3.icp38g|pcp9|sfld5_presel|pcp6|pcp5|pcp8|pwu1.sortCriteria|fld20_slot|pcp7|fld11_slot|fld23_slot|pcp2|pcp4|pcp3|miu3.icp34g|smc</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln27</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

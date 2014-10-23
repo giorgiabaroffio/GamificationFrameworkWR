@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.operation.rtx.db.ModifyUnitService" name="Update User">
+  <BulkUpdate>false</BulkUpdate>
+  <Entity>User</Entity>
+  <ModifiedAttributes>att14|att26|att16|att13|att22|att21|att399|att18|password|att29|email|userName|att31</ModifiedAttributes>
+  <ModifiedRoles/>
+  <FetchMode>ENTITY</FetchMode>
+  <Query entity="User">
+    <Input id="p0" param="kcond2.userOID" type="integer" implied="false" expandStyle="in"/>
+    <HQL>from User a_user
+      <Where defaultPolicy="fill" allImplied="false">(({[p0]a_user.oid in(?)}))</Where>
+    </HQL>
+  </Query>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Update User</ModelName>
+    <ParentContainer>opg1</ParentContainer>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="mfu2">kcond2.userOID</OperationParam>
+      <OperationParam unit="mfu2">mfu2.att399</OperationParam>
+      <OperationParam unit="mfu2">mfu2.att18</OperationParam>
+      <OperationParam unit="mfu2">mfu2.att29</OperationParam>
+      <OperationParam unit="mfu2">mfu2.password</OperationParam>
+      <OperationParam unit="mfu2">mfu2.email</OperationParam>
+      <OperationParam unit="mfu2">mfu2.att14</OperationParam>
+      <OperationParam unit="mfu2">mfu2.att26</OperationParam>
+      <OperationParam unit="mfu2">mfu2.att16</OperationParam>
+      <OperationParam unit="mfu2">mfu2.userName</OperationParam>
+      <OperationParam unit="mfu2">mfu2.att13</OperationParam>
+      <OperationParam unit="mfu2">mfu2.att22</OperationParam>
+      <OperationParam unit="mfu2">mfu2.att31</OperationParam>
+      <OperationParam unit="mfu2">mfu2.att21</OperationParam>
+      <Params>sfld6_presel|miu1g.icp22g|fld17_slot|fld12_slot|miu1g.icp16g|fld4_slot|fld26_slot|pcp13|pcp12|pcp11|miu1g.icp26g|pcp10|sp|miu1g.icp21g|miu1g.icp19g|fld22_slot|mssu2.shownMessages|fld16_slot|miu1g.icp20g|pwu1.block|miu1g.icp25g|kcond3.userOID|link|miu1g.icp18g|miu1g.icp24g|pwu1.newSortAttribute|fld18_slot|cmplink|fld10_slot|fld24_slot|fld19_slot|miu1g.icp28g|fld21_slot|pcp14|pcp15|miu1g.icp17g|pcp9|miu1g.icp23g|sfld5_presel|pcp6|pcp5|pwu1.sortCriteria|pcp8|fld20_slot|pcp7|fld11_slot|fld23_slot|pcp2|pcp4|pcp3|smc|miu1g.icp27g</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln31</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

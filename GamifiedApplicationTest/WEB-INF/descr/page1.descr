@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultPageService" name="Loyalty Program Simulator">
+  <ParentContainer>sv1</ParentContainer>
+  <Secure>false</Secure>
+  <Localized>false</Localized>
+  <CheckPermission>false</CheckPermission>
+  <Alternatives/>
+  <ProtectedSubPages/>
+  <Navigations knownEffects="#pr#">
+    <Navigation name="0" nonContextual="true" interPage="always" links="page1"/>
+    <Navigation name="1" nonContextual="true" interPage="always" links="page1.link"/>
+    <Navigation name="2" links="page1.auto-link"/>
+    <Navigation name="3" links="page1.auto-link" selectiveRefresh="true"/>
+    <Navigation name="4" links="ln1|validation-failed"/>
+    <Navigation name="5" links="ln15|ln7g"/>
+    <Navigation name="6" links="ln15|ln7g" selectiveRefresh="true"/>
+    <Navigation name="7" links="ln1|kln5g" effects="#pr#"/>
+    <Navigation name="8" links="ln1|oln4" effects="#pr#"/>
+    <Navigation name="9" links="ln6|impl" postPropagatedLink="ln6"/>
+    <Navigation name="10" links="ln6|impl" selectiveRefresh="true" postPropagatedLink="ln6"/>
+    <Navigation name="11" links="ln6|oln5"/>
+    <Navigation name="12" links="ln6|oln5" selectiveRefresh="true"/>
+    <Navigation name="13" interPage="always" links="ln7g"/>
+    <Navigation name="14" links="ln8g|impl" postPropagatedLink="ln8g"/>
+    <Navigation name="15" links="ln8g|impl" selectiveRefresh="true" postPropagatedLink="ln8g"/>
+    <Navigation name="16" links="ln8g|oln7g" effects="#pr#"/>
+    <Navigation name="17" links="ln8g|oln7g" selectiveRefresh="true" effects="#pr#"/>
+    <Navigation name="18" interPage="always" links="pcu1.enter|oln5"/>
+  </Navigations>
+  <ContextInitServices/>
+  <ContextInits></ContextInits>
+  <UselessPreserves>
+    <UselessPreserve navs="2|7|5|4|17|9|16|8|14|11|12" effects="-" futile=""/>
+    <UselessPreserve navs="3|2|7|5|4|17|9|16|8|14|11|12" effects="#pr#" futile=""/>
+    <UselessPreserve navs="10|6|15" effects="#pr#" futile="rcond1.att11"/>
+    <UselessPreserve navs="3|10|6|15" effects="-" futile="rcond1.att11"/>
+  </UselessPreserves>
+  <LinkSequence>ln5|ln4</LinkSequence>
+  <UnitComputations>
+    <UnitComputation unit="enu1" formBased="true">
+      <NavigationCondition selectiveRefresh="true" effects="#pr#"/>
+      <NavigationCondition selectiveRefresh="true" navs="10|6|17|15|12" effects="-"/>
+      <RefreshForm selectiveRefresh="true" navs="6" inputs="fld5_slot"/>
+      <RefreshForm navs="5|13" inputs="fld5_slot"/>
+      <RefreshForm selectiveRefresh="true" navs="12" inputs="sfld2_label|sfld2_output"/>
+      <RefreshForm navs="18|11" inputs="sfld2_label|sfld2_output"/>
+      <RefreshFormAll navs="1|0|9|14"/>
+    </UnitComputation>
+    <UnitComputation unit="seu2">
+      <NavigationCondition selectiveRefresh="true" navs="17" effects="-"/>
+      <NavigationCondition selectiveRefresh="true" navs="3|17" effects="#pr#"/>
+    </UnitComputation>
+    <UnitComputation unit="seu3">
+      <NavigationCondition selectiveRefresh="true" navs="17|12" effects="-"/>
+      <NavigationCondition selectiveRefresh="true" navs="3|17|12" effects="#pr#"/>
+    </UnitComputation>
+  </UnitComputations>
+  <ManualLinks>
+    <ManualLink>ln1</ManualLink>
+    <ManualLink>ln6</ManualLink>
+    <ManualLink>ln15</ManualLink>
+    <ManualLink>ln8g</ManualLink>
+  </ManualLinks>
+  <PropagationModes client="true" server="true"/>
+  <Variables></Variables>
+  <Conditions></Conditions>
+  <Layouts>
+    <Layout id="page1_grid_0">
+      <Layout id="page1_cell_0">
+        <Layout id="enu1_0" unitId="enu1"></Layout>
+      </Layout>
+      <Layout id="page1_cell_12">
+        <Layout id="enu1_1" unitId="enu1"></Layout>
+      </Layout>
+      <Layout id="page1_cell_24">
+        <Layout id="enu1_2" unitId="enu1"></Layout>
+      </Layout>
+    </Layout>
+  </Layouts>
+  <AutoLinkInfo>
+    <PreservedContextParams>
+      <Params>rcond1.att11</Params>
+    </PreservedContextParams>
+    <PreservedContextParams selectiveRefresh="true">
+      <Params>rcond1.att11</Params>
+    </PreservedContextParams>
+  </AutoLinkInfo>
+  <!--Page Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultPageParameterService">
+    <ModelName>Loyalty Program Simulator</ModelName>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <LinkIdRequired>true</LinkIdRequired>
+    <PageParams>
+      <PageParam unit="seu3">rcond1.att11</PageParam>
+      <PageParam preservedByForm="true" unit="enu1">sfld1g_output</PageParam>
+      <PageParam preservedByForm="true" unit="enu1">sfld2_label</PageParam>
+      <PageParam preservedByForm="true" unit="enu1">sfld1_output</PageParam>
+      <PageParam preservedByForm="true" unit="enu1">sfld1_label</PageParam>
+      <PageParam preservedByForm="true" unit="enu1">sfld2_output</PageParam>
+      <PageParam preservedByForm="true" unit="enu1">fld5_slot</PageParam>
+      <PageParam preservedByForm="true" unit="enu1">sfld1g_label</PageParam>
+      <PageParam>miu1.icp1</PageParam>
+      <PageParam>miu1.icp3</PageParam>
+      <PageParam>miu1.icp2</PageParam>
+      <PageParam>miu1.icp4</PageParam>
+      <PageParam>pcp1</PageParam>
+      <PageParam>miu2g.icp15g</PageParam>
+      <PageParam>miu2g.icp14g</PageParam>
+      <PageParam>acond3g</PageParam>
+      <PageParam>acond4g</PageParam>
+      <PageParam>pwu1g.block</PageParam>
+      <PageParam>link</PageParam>
+      <PageParam>nav</PageParam>
+      <PageParam>so</PageParam>
+      <PageParam>ajax</PageParam>
+      <PageParam>ajaxRefresh</PageParam>
+    </PageParams>
+  </WRParameterService>
+</Descriptor>

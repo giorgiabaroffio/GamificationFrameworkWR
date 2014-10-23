@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.utility.rtx.db.SelectorUnitService" name="Action">
+  <MaxResults/>
+  <Query entity="ent1">
+    <Input id="p0" param="rcond1.att11" type="integer" implied="false" expandStyle="in"/>
+    <Output id="att1" name="oid" index="0"/>
+    <Output id="att2" name="name" index="1"/>
+    <HQL>select a_actionType.oid, a_actionType.name from ActionType a_actionType
+      <Where defaultPolicy="fill" allImplied="false">(({[p0](a_actionType.actiontypeToGamifiedapplication.oid in(?))}))</Where>
+    </HQL>
+  </Query>
+</Descriptor>

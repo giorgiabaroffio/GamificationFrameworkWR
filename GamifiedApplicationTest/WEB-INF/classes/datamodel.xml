@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DataModel packageName="com.webratio.webapp" volatileKeyPolicy="" useQualifiedEntities="">
+  <!-- DATABASES -->
+  <Database id="application_vdb" url="jdbc:h2:mem:application_vdb" schema="" duration="volatileApplication"/>
+  <Database id="db1" url="jdbc:mysql://localhost:3306/gamified_app" schema=""/>
+  <Database id="db2" url="jdbc:mysql://localhost:3306/community" schema=""/>
+  <Database id="session_vdb" url="jdbc:h2:mem:session_vdb" schema="" duration="volatileSession"/>
+  <!-- ENTITIES -->
+  <Entity id="User" name="User" className="com.webratio.webapp.User" duration="persistent" database="db1">
+    <Attribute id="userOID" key="true" name="oid" fieldName="oid" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="userName" key="false" name="Username" fieldName="username" type="string" javaType="java.lang.String"/>
+    <Attribute id="password" key="false" name="Password" fieldName="password" type="password" javaType="java.lang.String"/>
+    <Attribute id="email" key="false" name="Email" fieldName="email" type="string" javaType="java.lang.String"/>
+    <Attribute id="att13" key="false" name="First Name" fieldName="firstName" type="string" javaType="java.lang.String"/>
+    <Attribute id="att14" key="false" name="Last Name" fieldName="lastName" type="string" javaType="java.lang.String"/>
+    <Attribute id="att15" key="false" name="Company Name" fieldName="companyName" type="string" javaType="java.lang.String"/>
+    <Attribute id="att16" key="false" name="City" fieldName="city" type="string" javaType="java.lang.String"/>
+    <Attribute id="att17" key="false" name="Twitter" fieldName="twitter" type="string" javaType="java.lang.String"/>
+    <Attribute id="att18" key="false" name="Country" fieldName="country" type="string" javaType="java.lang.String"/>
+    <Attribute id="att19" key="false" name="Certified" fieldName="certified" type="boolean" javaType="java.lang.Boolean" trueValue="" falseValue=""/>
+    <Attribute id="att20" key="false" name="Type" fieldName="type" type="string" javaType="java.lang.String"/>
+    <Attribute id="att21" key="false" name="Geographical Area" fieldName="geographicalArea" type="string" javaType="java.lang.String"/>
+    <Attribute id="att22" key="false" name="Public profile" fieldName="publicProfile" type="boolean" javaType="java.lang.Boolean" trueValue="" falseValue=""/>
+    <Attribute id="att23" key="false" name="Linkedin" fieldName="linkedin" type="string" javaType="java.lang.String"/>
+    <Attribute id="att24" key="false" name="Bio" fieldName="bio" type="string" javaType="java.lang.String" contentType="text/html"/>
+    <Attribute id="att25" key="false" name="Facebook" fieldName="facebook" type="string" javaType="java.lang.String"/>
+    <Attribute id="att26" key="false" name="Iso Code" fieldName="isoCode" type="string" javaType="java.lang.String"/>
+    <Attribute id="att27" key="false" name="Google" fieldName="google" type="string" javaType="java.lang.String"/>
+    <Attribute id="att28" key="false" name="Partner" fieldName="partner" type="boolean" javaType="java.lang.Boolean" trueValue="" falseValue=""/>
+    <Attribute id="att29" key="false" name="Internal" fieldName="internal" type="boolean" javaType="java.lang.Boolean" trueValue="" falseValue=""/>
+    <Attribute id="att30" key="false" name="WebSite" fieldName="webSite" type="string" javaType="java.lang.String"/>
+    <Attribute id="att398" key="false" name="Small Photo" fieldName="smallPhoto" type="blob" javaType="java.lang.String" storageType="database" uploadPolicy="managed" deletePolicy="no action" refFieldName="smallPhotoRef" useRefColumn="true" binaryFieldName="smallPhotoBinary" entityName="User" defBlobName="" contentType="image"/>
+    <Attribute id="att399" key="false" name="Big Photo" fieldName="bigPhoto" type="blob" javaType="java.lang.String" storageType="database" uploadPolicy="managed" deletePolicy="no action" refFieldName="bigPhotoRef" useRefColumn="true" binaryFieldName="bigPhotoBinary" entityName="User" defBlobName="" contentType="image"/>
+    <Attribute id="att31" key="false" name="BirthDate" fieldName="birthDate" type="date" javaType="java.sql.Date"/>
+    <OutgoingRoles>User2Group|User2DefaultGroup|role1g</OutgoingRoles>
+    <InverseRoles>role1g</InverseRoles>
+  </Entity>
+  <Entity id="Group" name="Group" className="com.webratio.webapp.Group" duration="persistent" database="db1">
+    <Attribute id="groupOID" key="true" name="oid" fieldName="oid" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="groupName" key="false" name="groupName" fieldName="groupName" type="string" javaType="java.lang.String"/>
+    <OutgoingRoles>Group2User|DefaultGroup2User|Group2DefaultModule|Group2Module</OutgoingRoles>
+    <InverseRoles>Group2User|DefaultGroup2User</InverseRoles>
+  </Entity>
+  <Entity id="Module" name="Module" className="com.webratio.webapp.Module" duration="persistent" database="db1">
+    <Attribute id="moduleOID" key="true" name="oid" fieldName="oid" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="moduleID" key="false" name="moduleID" fieldName="moduleID" type="string" javaType="java.lang.String"/>
+    <Attribute id="moduleName" key="false" name="moduleName" fieldName="moduleName" type="string" javaType="java.lang.String"/>
+    <OutgoingRoles>DefaultModule2Group|Module2Group</OutgoingRoles>
+    <InverseRoles>DefaultModule2Group|Module2Group</InverseRoles>
+  </Entity>
+  <Entity id="ent1" name="ActionType" className="com.webratio.webapp.ActionType" duration="persistent" database="db2">
+    <Attribute id="att1" key="true" name="oid" fieldName="oid" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="att2" key="false" name="name" fieldName="name" type="string" javaType="java.lang.String"/>
+    <Attribute id="att3" key="false" name="score" fieldName="score" type="decimal" javaType="java.math.BigDecimal"/>
+    <Attribute id="att4" key="false" name="reputation" fieldName="reputation" type="boolean" javaType="java.lang.Boolean" trueValue="" falseValue=""/>
+    <Attribute id="att5" key="false" name="participation" fieldName="participation" type="boolean" javaType="java.lang.Boolean" trueValue="" falseValue=""/>
+    <Attribute id="att6" key="false" name="area" fieldName="area" type="string" javaType="java.lang.String"/>
+    <Attribute id="att7" key="false" name="description" fieldName="description" type="string" javaType="java.lang.String"/>
+    <Attribute id="att8" key="false" name="checkTimeElapsed" fieldName="checkTimeElapsed" type="boolean" javaType="java.lang.Boolean" trueValue="" falseValue=""/>
+    <Attribute id="att9" key="false" name="millisecondsTimeElapsed" fieldName="millisecondsTimeElapsed" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="att10" key="false" name="repeatable" fieldName="repeatable" type="boolean" javaType="java.lang.Boolean" trueValue="" falseValue=""/>
+    <OutgoingRoles>role1</OutgoingRoles>
+    <InverseRoles/>
+  </Entity>
+  <Entity id="ent2" name="Thematic Area" className="com.webratio.webapp.ThematicArea" duration="persistent" database="db2">
+    <Attribute id="att11" key="true" name="oid" fieldName="oid" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="att12" key="false" name="name" fieldName="name" type="string" javaType="java.lang.String"/>
+    <OutgoingRoles>role2</OutgoingRoles>
+    <InverseRoles>role2</InverseRoles>
+  </Entity>
+  <Entity id="ent5" name="Rank" className="com.webratio.webapp.Rank" duration="persistent" superEntity="ent6" database="db2">
+    <Attribute id="att117" key="false" name="companyName" fieldName="companyName" type="string" javaType="java.lang.String"/>
+    <Attribute id="att118" key="false" name="firstName" fieldName="firstName" type="string" javaType="java.lang.String"/>
+    <Attribute id="att119" key="false" name="lastName" fieldName="lastName" type="string" javaType="java.lang.String"/>
+    <Attribute id="att120" key="false" name="city" fieldName="city" type="string" javaType="java.lang.String"/>
+    <Attribute id="att122" key="false" name="smallPhoto" fieldName="smallPhoto" type="string" javaType="java.lang.String"/>
+    <Attribute id="att124" key="false" name="country" fieldName="country" type="string" javaType="java.lang.String"/>
+    <Attribute id="att125" key="false" name="publicProfile" fieldName="publicProfile" type="boolean" javaType="java.lang.Boolean" trueValue="" falseValue=""/>
+    <Attribute id="att126" key="false" name="geographicalArea" fieldName="geographicalArea" type="string" javaType="java.lang.String"/>
+    <Attribute id="att128" key="false" name="bigPhoto" fieldName="bigPhoto" type="string" javaType="java.lang.String"/>
+    <Attribute id="att134" key="false" name="participationMonthly" fieldName="participationMonthly" type="decimal" javaType="java.math.BigDecimal"/>
+    <Attribute id="att143" key="false" name="birthdate" fieldName="birthdate" type="date" javaType="java.sql.Date"/>
+    <Attribute id="att144" key="false" name="participation" fieldName="participation" type="decimal" javaType="java.math.BigDecimal"/>
+    <Attribute id="att145" key="false" name="credit" fieldName="credit" type="decimal" javaType="java.math.BigDecimal"/>
+    <Attribute id="att148" key="false" name="isoCode" fieldName="isoCode" type="string" javaType="java.lang.String"/>
+    <OutgoingRoles>role4|role6|role8|role10</OutgoingRoles>
+    <InverseRoles>role4|role6|role8|role10</InverseRoles>
+  </Entity>
+  <Entity id="ent6" name="Usertable" className="com.webratio.webapp.Usertable" duration="persistent" database="db2">
+    <Attribute id="att149" key="true" name="oid2" fieldName="oid2" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="att150" key="false" name="email" fieldName="email" type="string" javaType="java.lang.String"/>
+    <Attribute id="att151" key="false" name="password" fieldName="password" type="string" javaType="java.lang.String"/>
+    <Attribute id="att152" key="false" name="internal" fieldName="internal" type="boolean" javaType="java.lang.Boolean" trueValue="" falseValue=""/>
+    <Attribute id="att153" key="false" name="username" fieldName="username" type="string" javaType="java.lang.String"/>
+  </Entity>
+  <Entity id="ent3" name="Notification" className="com.webratio.webapp.Notification" duration="persistent" database="db2">
+    <Attribute id="att32" key="true" name="oid" fieldName="oid" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="att33" key="false" name="creationDate" fieldName="creationDate" type="timestamp" javaType="java.sql.Timestamp"/>
+    <Attribute id="att34" key="false" name="code" fieldName="code" type="string" javaType="java.lang.String"/>
+    <Attribute id="att35" key="false" name="status" fieldName="status" type="string" javaType="java.lang.String"/>
+    <Attribute id="att36" key="false" name="deliveryDate" fieldName="deliveryDate" type="timestamp" javaType="java.sql.Timestamp"/>
+    <Attribute id="att37" key="false" name="languageCode" fieldName="languageCode" type="string" javaType="java.lang.String"/>
+    <OutgoingRoles>role3</OutgoingRoles>
+    <InverseRoles/>
+  </Entity>
+  <Entity id="ent4" name="RewardInstance" className="com.webratio.webapp.RewardInstance" duration="persistent" database="db2">
+    <Attribute id="att38" key="true" name="oid" fieldName="oid" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="att39" key="false" name="date" fieldName="date" type="timestamp" javaType="java.sql.Timestamp"/>
+    <Attribute id="att40" key="false" name="score" fieldName="score" type="decimal" javaType="java.math.BigDecimal"/>
+    <OutgoingRoles>role5</OutgoingRoles>
+    <InverseRoles/>
+  </Entity>
+  <Entity id="ent7" name="ActionInstance" className="com.webratio.webapp.ActionInstance" duration="persistent" database="db2">
+    <Attribute id="att41" key="true" name="oid" fieldName="oid" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="att42" key="false" name="executor" fieldName="executor" type="string" javaType="java.lang.String"/>
+    <Attribute id="att43" key="false" name="date" fieldName="date" type="timestamp" javaType="java.sql.Timestamp"/>
+    <Attribute id="att44" key="false" name="score" fieldName="score" type="decimal" javaType="java.math.BigDecimal"/>
+    <Attribute id="att45" key="false" name="description" fieldName="description" type="string" javaType="java.lang.String"/>
+    <Attribute id="att46" key="false" name="tag" fieldName="tag" type="string" javaType="java.lang.String"/>
+    <Attribute id="att47" key="false" name="link" fieldName="link" type="string" javaType="java.lang.String"/>
+    <OutgoingRoles>role7</OutgoingRoles>
+    <InverseRoles/>
+  </Entity>
+  <Entity id="ent8" name="BadgeInstance" className="com.webratio.webapp.BadgeInstance" duration="persistent" database="db2">
+    <Attribute id="att48" key="true" name="oid" fieldName="oid" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="att49" key="false" name="score" fieldName="score" type="decimal" javaType="java.math.BigDecimal"/>
+    <Attribute id="att50" key="false" name="date" fieldName="date" type="timestamp" javaType="java.sql.Timestamp"/>
+    <OutgoingRoles>role9</OutgoingRoles>
+    <InverseRoles/>
+  </Entity>
+  <Entity id="ent2g" name="GetActions" className="com.webratio.webapp.webServicesTest.GetActions" duration="volatileSession" packageName="com.webratio.webapp.webServicesTest" database="session_vdb">
+    <Attribute id="att5g" key="true" name="oid" fieldName="oid" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="att6g" key="false" name="thematic area" fieldName="thematicArea" type="string" javaType="java.lang.String"/>
+    <Attribute id="att7g" key="false" name="action name" fieldName="actionName" type="string" javaType="java.lang.String"/>
+    <Attribute id="att8g" key="false" name="action id" fieldName="actionId" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="ownerId1384198655" key="false" name="WROWNERID" fieldName="WROWNERID" type="integer" javaType="java.lang.Integer"/>
+  </Entity>
+  <Entity id="ent3g" name="GetUserCredits" className="com.webratio.webapp.webServicesTest.GetUserCredits" duration="volatileSession" packageName="com.webratio.webapp.webServicesTest" database="session_vdb">
+    <Attribute id="att3g" key="true" name="oid" fieldName="oid" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="att4g" key="false" name="User Email" fieldName="userEmail" type="string" javaType="java.lang.String"/>
+    <Attribute id="att9g" key="false" name="Credit Available" fieldName="creditAvailable" type="decimal" javaType="java.math.BigDecimal"/>
+    <Attribute id="att10g" key="false" name="Credit Spent" fieldName="creditSpent" type="decimal" javaType="java.math.BigDecimal"/>
+    <Attribute id="att11g" key="false" name="Total Credit" fieldName="totalCredit" type="decimal" javaType="java.math.BigDecimal"/>
+    <Attribute id="ownerId1384198686" key="false" name="WROWNERID" fieldName="WROWNERID" type="integer" javaType="java.lang.Integer"/>
+  </Entity>
+  <Entity id="ent4g" name="GetUserRewards" className="com.webratio.webapp.webServicesTest.GetUserRewards" duration="volatileSession" packageName="com.webratio.webapp.webServicesTest" database="session_vdb">
+    <Attribute id="att12g" key="true" name="oid" fieldName="oid" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="att13g" key="false" name="Reward Name" fieldName="rewardName" type="string" javaType="java.lang.String"/>
+    <Attribute id="att14g" key="false" name="Reward ID" fieldName="rewardID" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="att15g" key="false" name="Needed Points" fieldName="neededPoints" type="decimal" javaType="java.math.BigDecimal"/>
+    <Attribute id="att16g" key="false" name="User Email" fieldName="userEmail" type="string" javaType="java.lang.String"/>
+    <Attribute id="ownerId1384198717" key="false" name="WROWNERID" fieldName="WROWNERID" type="integer" javaType="java.lang.Integer"/>
+  </Entity>
+  <Entity id="ent5g" name="RedeemUserReward" className="com.webratio.webapp.webServicesTest.RedeemUserReward" duration="volatileSession" packageName="com.webratio.webapp.webServicesTest" database="session_vdb">
+    <Attribute id="att17g" key="true" name="oid" fieldName="oid" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="att18g" key="false" name="User Email" fieldName="userEmail" type="string" javaType="java.lang.String"/>
+    <Attribute id="att19g" key="false" name="Credits Available" fieldName="creditsAvailable" type="decimal" javaType="java.math.BigDecimal"/>
+    <Attribute id="ownerId1384198748" key="false" name="WROWNERID" fieldName="WROWNERID" type="integer" javaType="java.lang.Integer"/>
+  </Entity>
+  <Entity id="ent1g" name="Post Forum" className="com.webratio.webapp.PostForum" duration="persistent" database="db1">
+    <Attribute id="att1g" key="true" name="oid" fieldName="oid" type="integer" javaType="java.lang.Integer"/>
+    <Attribute id="att2g" key="false" name="Text" fieldName="text" type="string" javaType="java.lang.String"/>
+    <OutgoingRoles>role2g</OutgoingRoles>
+    <InverseRoles/>
+  </Entity>
+  <!-- RELATIONSHIP_ROLES -->
+  <Role id="User2Group" inverseId="Group2User" source="User" target="Group" maxCard="many" fieldName="groups" derived="false" database="db1" direct="true"/>
+  <Role id="Group2User" inverseId="User2Group" source="Group" target="User" maxCard="many" fieldName="users" derived="false" database="db1" direct="false"/>
+  <Role id="User2DefaultGroup" inverseId="DefaultGroup2User" source="User" target="Group" maxCard="1" fieldName="defaultGroup" derived="false" database="db1" direct="true"/>
+  <Role id="DefaultGroup2User" inverseId="User2DefaultGroup" source="Group" target="User" maxCard="many" fieldName="defaultUsers" derived="false" database="db1" direct="false"/>
+  <Role id="Group2DefaultModule" inverseId="DefaultModule2Group" source="Group" target="Module" maxCard="1" fieldName="defaultModule" derived="false" database="db1" direct="true"/>
+  <Role id="DefaultModule2Group" inverseId="Group2DefaultModule" source="Module" target="Group" maxCard="many" fieldName="defaultGroups" derived="false" database="db1" direct="false"/>
+  <Role id="Group2Module" inverseId="Module2Group" source="Group" target="Module" maxCard="many" fieldName="modules" derived="false" database="db1" direct="true"/>
+  <Role id="Module2Group" inverseId="Group2Module" source="Module" target="Group" maxCard="many" fieldName="groups" derived="false" database="db1" direct="false"/>
+  <Role id="role1" inverseId="role2" source="ent1" target="ent2" maxCard="1" fieldName="actiontypeToGamifiedapplication" derived="false" database="db2" direct="true"/>
+  <Role id="role2" inverseId="role1" source="ent2" target="ent1" maxCard="many" fieldName="gamifiedapplicationToActiontype" derived="false" database="db2" direct="false"/>
+  <Role id="role3" inverseId="role4" source="ent3" target="ent5" maxCard="1" fieldName="notificationToRank" derived="false" database="db2" direct="true"/>
+  <Role id="role4" inverseId="role3" source="ent5" target="ent3" maxCard="many" fieldName="rankToNotification" derived="false" database="db2" direct="false"/>
+  <Role id="role5" inverseId="role6" source="ent4" target="ent5" maxCard="1" fieldName="rewardinstanceToRank" derived="false" database="db2" direct="true"/>
+  <Role id="role6" inverseId="role5" source="ent5" target="ent4" maxCard="many" fieldName="rankToRewardinstance" derived="false" database="db2" direct="false"/>
+  <Role id="role7" inverseId="role8" source="ent7" target="ent5" maxCard="1" fieldName="actioninstanceToRank" derived="false" database="db2" direct="true"/>
+  <Role id="role8" inverseId="role7" source="ent5" target="ent7" maxCard="many" fieldName="rankToActioninstance" derived="false" database="db2" direct="false"/>
+  <Role id="role9" inverseId="role10" source="ent8" target="ent5" maxCard="1" fieldName="badgeinstanceToRank" derived="false" database="db2" direct="true"/>
+  <Role id="role10" inverseId="role9" source="ent5" target="ent8" maxCard="many" fieldName="rankToBadgeinstance" derived="false" database="db2" direct="false"/>
+  <Role id="role1g" inverseId="role2g" source="User" target="ent1g" maxCard="many" fieldName="rankToPostForum" derived="false" database="db1" direct="false"/>
+  <Role id="role2g" inverseId="role1g" source="ent1g" target="User" maxCard="1" fieldName="postForumToRank" derived="false" database="db1" direct="true"/>
+</DataModel>

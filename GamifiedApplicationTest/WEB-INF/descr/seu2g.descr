@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.utility.rtx.db.SelectorUnitService" name="Community User">
+  <MaxResults/>
+  <Query entity="ent5">
+    <Input id="p0" param="acond1g" type="boolean" implied="false" expandStyle="in" value="true" attribute="att125"/>
+    <Output id="att149" name="oid2" index="0"/>
+    <Output id="att150" name="email" index="1"/>
+    <HQL>select a_rank.oid2, a_rank.email from Rank a_rank
+      <Where defaultPolicy="fill" allImplied="false">(({[p0]a_rank.publicProfile in(?)}))</Where>
+    </HQL>
+  </Query>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Community User</ModelName>
+    <ParentContainer>opm2g</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln13g</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultPageService" name="Get User Rewards">
+  <ParentContainer>area1g</ParentContainer>
+  <Secure>false</Secure>
+  <Localized>false</Localized>
+  <CheckPermission>false</CheckPermission>
+  <Alternatives/>
+  <ProtectedSubPages/>
+  <Navigations knownEffects="#pr#">
+    <Navigation name="0" nonContextual="true" interPage="always" links="page6g"/>
+    <Navigation name="1" nonContextual="true" interPage="always" links="page6g.link"/>
+    <Navigation name="2" links="page6g.auto-link"/>
+    <Navigation name="3" links="page6g.auto-link" selectiveRefresh="true"/>
+    <Navigation name="4" links="ln21g|validation-failed"/>
+    <Navigation name="5" links="ln21g|impl" postPropagatedLink="ln21g"/>
+    <Navigation name="6" links="ln21g|kln12g" effects="#pr#"/>
+    <Navigation name="7" links="ln21g|oln46g" effects="#pr#"/>
+    <Navigation name="8" links="pwu4gatt13g"/>
+    <Navigation name="9" links="pwu4gatt15g"/>
+  </Navigations>
+  <ContextInitServices/>
+  <ContextInits></ContextInits>
+  <UselessPreserves>
+    <UselessPreserve navs="2|5|4|9|8" effects="-" futile=""/>
+    <UselessPreserve navs="5|4|9|8" effects="#pr#" futile=""/>
+    <UselessPreserve navs="3|7|6" effects="-" futile="pwu4g.sortCriteria|pwu4g.newSortAttribute"/>
+    <UselessPreserve navs="3|2|7|6" effects="#pr#" futile="pwu4g.sortCriteria|pwu4g.newSortAttribute"/>
+  </UselessPreserves>
+  <LinkSequence>ln22g</LinkSequence>
+  <UnitComputations>
+    <UnitComputation unit="enu4g" formBased="true">
+      <NavigationCondition selectiveRefresh="true" effects="#pr#"/>
+      <RefreshFormAll navs="1|0|7|6|5"/>
+    </UnitComputation>
+    <UnitComputation unit="pwu4g" formBased="true">
+      <NavigationCondition selectiveRefresh="true" effects="#pr#"/>
+      <RefreshFormAll navs="1|0|7|6|5"/>
+      <RefreshForm navs="9|8" inputs="pwu4g.sortCriteria|pwu4g.newSortAttribute"/>
+    </UnitComputation>
+  </UnitComputations>
+  <ManualLinks>
+    <ManualLink>ln21g</ManualLink>
+    <ManualLink>pwu4gatt13g</ManualLink>
+    <ManualLink>pwu4gatt15g</ManualLink>
+  </ManualLinks>
+  <Variables></Variables>
+  <Conditions></Conditions>
+  <Layouts>
+    <Layout id="page6g_grid_0">
+      <Layout id="page6g_cell_0">
+        <Layout id="enu4g_0" unitId="enu4g"></Layout>
+      </Layout>
+      <Layout id="page6g_cell_12">
+        <Layout id="pwu4g_0" unitId="pwu4g"></Layout>
+      </Layout>
+    </Layout>
+  </Layouts>
+  <AutoLinkInfo>
+    <PreservedContextParams>
+      <Params>pwu4g.sortCriteria|pwu4g.newSortAttribute</Params>
+    </PreservedContextParams>
+    <PreservedContextParams selectiveRefresh="true">
+      <Params/>
+    </PreservedContextParams>
+  </AutoLinkInfo>
+  <!--Page Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultPageParameterService">
+    <ModelName>Get User Rewards</ModelName>
+    <NavigationAncestors>sv1|area1g</NavigationAncestors>
+    <LinkIdRequired>true</LinkIdRequired>
+    <PageParams>
+      <PageParam unit="pwu4g">pwu4g.sortCriteria</PageParam>
+      <PageParam unit="pwu4g">pwu4g.newSortAttribute</PageParam>
+      <PageParam>miu8g.icp49g</PageParam>
+      <PageParam>link</PageParam>
+      <PageParam>nav</PageParam>
+      <PageParam>so</PageParam>
+      <PageParam>ajax</PageParam>
+      <PageParam>ajaxRefresh</PageParam>
+    </PageParams>
+  </WRParameterService>
+</Descriptor>

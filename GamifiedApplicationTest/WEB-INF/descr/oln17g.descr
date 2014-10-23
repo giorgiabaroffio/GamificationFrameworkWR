@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultLinkService">
+  <Target>scu11g</Target>
+  <Secure>false</Secure>
+  <Source>icu4g</Source>
+  <ReachableAlternativePages></ReachableAlternativePages>
+  <Navigates>true</Navigates>
+  <StartsTransaction>false</StartsTransaction>
+  <EndsTransaction>false</EndsTransaction>
+  <StartPageIdRequiredByTarget>true</StartPageIdRequiredByTarget>
+  <PreservedContextParams>
+    <Params/>
+  </PreservedContextParams>
+  <ContextPropagations>
+    <ContextPropagation targetParam="scu11g.city" sourceUnit="icu4g" sourceParam="icp30g"/>
+    <ContextPropagation targetParam="scu11g.country" sourceUnit="icu4g" sourceParam="icp32g"/>
+    <ContextPropagation targetParam="scu11g.firstName" sourceUnit="icu4g" sourceParam="icp33g"/>
+    <ContextPropagation targetParam="scu11g.geoArea" sourceUnit="icu4g" sourceParam="icp39g"/>
+    <ContextPropagation targetParam="scu11g.internal" sourceUnit="icu4g" sourceParam="icp40g"/>
+    <ContextPropagation targetParam="scu11g.isoCode" sourceUnit="icu4g" sourceParam="icp35g"/>
+    <ContextPropagation targetParam="scu11g.lastName" sourceUnit="icu4g" sourceParam="icp34g"/>
+    <ContextPropagation targetParam="scu11g.password" sourceUnit="icu4g" sourceParam="icp38g"/>
+    <ContextPropagation targetParam="scu11g.publicProfile" sourceUnit="icu4g" sourceParam="icp36g"/>
+    <ContextPropagation targetParam="scu11g.userEmail" sourceUnit="icu4g" sourceParam="icp31g"/>
+    <ContextPropagation targetParam="scu11g.username" sourceUnit="icu4g" sourceParam="icp37g"/>
+    <ContextPropagation targetParam="scu11g.photo" sourceUnit="icu4g" sourceParam="icp41g"/>
+    <ContextPropagation targetParam="scu11g.birthDate" sourceUnit="icu4g" sourceParam="icp29g"/>
+  </ContextPropagations>
+</Descriptor>

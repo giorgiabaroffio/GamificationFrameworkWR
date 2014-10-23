@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.utility.rtx.db.SelectorUnitService" name="List of Users">
+  <MaxResults/>
+  <Query entity="User">
+    <Input id="p0" param="acond9g" type="boolean" implied="false" expandStyle="in" value="true" attribute="att22"/>
+    <Output id="userOID" name="oid" index="0"/>
+    <Output id="att14" name="lastName" index="1"/>
+    <Output id="email" name="email" index="2"/>
+    <Output id="att13" name="firstName" index="3"/>
+    <HQL>select a_user.oid, a_user.lastName, a_user.email, a_user.firstName from User a_user
+      <Where defaultPolicy="fill" allImplied="false">(({[p0]a_user.publicProfile in(?)}))</Where>
+    </HQL>
+  </Query>
+</Descriptor>

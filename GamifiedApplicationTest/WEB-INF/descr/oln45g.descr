@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultLinkService">
+  <Target>cru4g</Target>
+  <Secure>false</Secure>
+  <Source>miu8g</Source>
+  <ReachableAlternativePages></ReachableAlternativePages>
+  <Navigates>true</Navigates>
+  <StartsTransaction>false</StartsTransaction>
+  <EndsTransaction>false</EndsTransaction>
+  <StartPageIdRequiredByTarget>true</StartPageIdRequiredByTarget>
+  <PreservedContextParams>
+    <Params/>
+  </PreservedContextParams>
+  <ContextPropagations>
+    <ContextPropagation targetParam="cru4g.att15g" sourceUnit="miu8g" sourceParam="ocp8g"/>
+    <ContextPropagation targetParam="cru4g.att14g" sourceUnit="miu8g" sourceParam="ocp11g"/>
+    <ContextPropagation targetParam="cru4g.att13g" sourceUnit="miu8g" sourceParam="ocp10g"/>
+    <ContextPropagation targetParam="cru4g.att16g" sourceUnit="miu8g" sourceParam="ocp9g"/>
+  </ContextPropagations>
+</Descriptor>

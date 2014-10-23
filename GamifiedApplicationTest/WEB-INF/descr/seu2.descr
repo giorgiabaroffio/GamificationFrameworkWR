@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.utility.rtx.db.SelectorUnitService" name="Select Gamified App">
+  <MaxResults/>
+  <Query entity="ent2">
+    <Output id="att11" name="oid" index="0"/>
+    <Output id="att12" name="name" index="1"/>
+    <HQL>select a_thematicArea.oid, a_thematicArea.name from ThematicArea a_thematicArea order by a_thematicArea.name asc</HQL>
+  </Query>
+</Descriptor>

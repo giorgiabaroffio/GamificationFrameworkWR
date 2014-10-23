@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultLinkService">
+  <Target>page1</Target>
+  <Secure>false</Secure>
+  <Source>pwu1g</Source>
+  <SourcePage>page8</SourcePage>
+  <ReachableAlternativePages></ReachableAlternativePages>
+  <Navigates>true</Navigates>
+  <StartsTransaction>false</StartsTransaction>
+  <EndsTransaction>false</EndsTransaction>
+  <StartPageIdRequiredByTarget>false</StartPageIdRequiredByTarget>
+  <PreservedContextParams>
+    <Params/>
+  </PreservedContextParams>
+  <ContextPropagations>
+    <ContextPropagation targetParam="fld5_slot" sourceUnit="pwu1g" sourceParam="data[].email"/>
+  </ContextPropagations>
+  <PageActions>
+    <Close pages=""/>
+    <Close pages="page8"/>
+  </PageActions>
+</Descriptor>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.store.cropimageunit.CropImageUnitService" name="CropImageUnit1">
+  <Mode>content</Mode>
+  <Format>jpg</Format>
+  <SourceSize width="600" height="600"/>
+  <TargetSize width="196" height="196"/>
+  <DefaultImage/>
+  <wr:Validation xmlns:wr="http://www.webratio.com/2013/WebML/WRValidation">
+    <wr:ValidationLink elementId="ciu4g" linkId="ciu4gSelect" action="validate"/>
+    <wr:ValidationLink elementId="ciu4g" linkId="ln3g" action="validate"/>
+    <ValueLengthValidationRule service="com.webratio.units.validation.ValueLengthValidationRuleService" elementId="ciu4gImage" id="vl33409734" name="CropImageUnit1 MaxFileSize" customErrorMessage="true">
+      <Predicate>max</Predicate>
+      <Value>4Mb</Value>
+    </ValueLengthValidationRule>
+  </wr:Validation>
+</Descriptor>

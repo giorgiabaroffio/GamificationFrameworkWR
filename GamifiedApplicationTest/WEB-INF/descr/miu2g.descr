@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.module.rtx.ModuleInstanceUnitService" name="Simulate Actions">
+  <Module operation="true" singleLayout="false">opm2g</Module>
+  <InputCollectorId>icu2g</InputCollectorId>
+  <InputParameter>icp14g</InputParameter>
+  <InputParameter>icp15g</InputParameter>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Simulate Actions</ModelName>
+    <ParentContainer>sv1</ParentContainer>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="miu2g">miu2g.icp15g</OperationParam>
+      <OperationParam unit="miu2g">miu2g.icp14g</OperationParam>
+      <Params>sfld2_output|sp|link|sfld1g_label|fld5_slot|miu1.icp3|miu1.icp2|miu1.icp1|cmplink|miu1.icp4|sfld1_output|sfld2_label|pcp1|sfld1g_output|smc|rcond1.att11|sfld1_label</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln7g</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

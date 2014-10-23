@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.OperationModuleService">
+  <InputCollectorUnit name="" id="icu9g">
+    <InputParameter id="icp48g" name="userEmail"/>
+  </InputCollectorUnit>
+  <OKCollectorUnits>okcu8g</OKCollectorUnits>
+  <KOCollectorUnits>kocu5g</KOCollectorUnits>
+  <OperationUnits>icu9g|okcu8g|kocu5g|rfrr8g|scu8g</OperationUnits>
+</Descriptor>

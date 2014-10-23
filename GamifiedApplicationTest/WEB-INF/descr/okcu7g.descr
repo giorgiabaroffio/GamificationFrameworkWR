@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.module.rtx.CollectorUnitService" name="OK">
+  <Type>OK</Type>
+  <Parameter name="Gamified Application" value="">ocp1g</Parameter>
+  <Parameter name="Action Name" value="">ocp2g</Parameter>
+  <Parameter name="Action ID" value="">ocp3g</Parameter>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>OK</ModelName>
+    <ParentContainer>opm6g</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="okcu7g">ocp1g</OperationParam>
+      <OperationParam unit="okcu7g">ocp2g</OperationParam>
+      <OperationParam unit="okcu7g">ocp3g</OperationParam>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks></OutgoingLinks>
+    <IsLinkHistoryRecorded>true</IsLinkHistoryRecorded>
+  </WRParameterService>
+</Descriptor>

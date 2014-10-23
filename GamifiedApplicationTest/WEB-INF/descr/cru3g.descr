@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.operation.rtx.db.CreateUnitService" name="Create Actions">
+  <Entity>ent3g</Entity>
+  <BulkInsert>true</BulkInsert>
+  <SkipBlankRecords>false</SkipBlankRecords>
+  <DeleteAllBefore/>
+  <Field param="cru3g.att3g" type="integer" attribute="att3g">oid</Field>
+  <Field param="cru3g.att4g" type="string" attribute="att4g">userEmail</Field>
+  <Field param="cru3g.att9g" type="decimal" attribute="att9g">creditAvailable</Field>
+  <Field param="cru3g.att10g" type="decimal" attribute="att10g">creditSpent</Field>
+  <Field param="cru3g.att11g" type="decimal" attribute="att11g">totalCredit</Field>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Create Actions</ModelName>
+    <ParentContainer>area1g</ParentContainer>
+    <NavigationAncestors>sv1|area1g</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="cru3g">cru3g.att11g</OperationParam>
+      <OperationParam unit="cru3g">cru3g.att10g</OperationParam>
+      <OperationParam unit="cru3g">cru3g.att4g</OperationParam>
+      <OperationParam unit="cru3g">cru3g.att9g</OperationParam>
+      <Params>sp|cmplink|link|miu7g.icp48g|smc</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln41g</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

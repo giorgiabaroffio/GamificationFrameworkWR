@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultPageService" name="Get User Credits">
+  <ParentContainer>area1g</ParentContainer>
+  <Secure>false</Secure>
+  <Localized>false</Localized>
+  <CheckPermission>false</CheckPermission>
+  <Alternatives/>
+  <ProtectedSubPages/>
+  <Navigations knownEffects="#pr#">
+    <Navigation name="0" nonContextual="true" interPage="always" links="page5g"/>
+    <Navigation name="1" nonContextual="true" interPage="always" links="page5g.link"/>
+    <Navigation name="2" links="page5g.auto-link"/>
+    <Navigation name="3" links="page5g.auto-link" selectiveRefresh="true"/>
+    <Navigation name="4" links="ln19g|validation-failed"/>
+    <Navigation name="5" links="ln19g|impl" postPropagatedLink="ln19g"/>
+    <Navigation name="6" links="ln19g|kln10g" effects="#pr#"/>
+    <Navigation name="7" links="ln19g|oln41g" effects="#pr#"/>
+  </Navigations>
+  <ContextInitServices/>
+  <ContextInits></ContextInits>
+  <UselessPreserves>
+    <UselessPreserve navs="3|2|7|6|5|4" futile=""/>
+  </UselessPreserves>
+  <LinkSequence>ln20g</LinkSequence>
+  <UnitComputations>
+    <UnitComputation unit="enu3g" formBased="true">
+      <NavigationCondition selectiveRefresh="true" effects="#pr#"/>
+      <RefreshFormAll navs="1|0|7|6|5"/>
+    </UnitComputation>
+    <UnitComputation unit="pwu3g" formBased="true">
+      <NavigationCondition selectiveRefresh="true" effects="#pr#"/>
+      <RefreshFormAll navs="1|0|7|6|5"/>
+    </UnitComputation>
+  </UnitComputations>
+  <ManualLinks>
+    <ManualLink>ln19g</ManualLink>
+  </ManualLinks>
+  <Variables></Variables>
+  <Conditions></Conditions>
+  <Layouts>
+    <Layout id="page5g_grid_0">
+      <Layout id="page5g_cell_0">
+        <Layout id="enu3g_0" unitId="enu3g"></Layout>
+      </Layout>
+      <Layout id="page5g_cell_12">
+        <Layout id="pwu3g_0" unitId="pwu3g"></Layout>
+      </Layout>
+    </Layout>
+  </Layouts>
+  <AutoLinkInfo>
+    <PreservedContextParams>
+      <Params/>
+    </PreservedContextParams>
+    <PreservedContextParams selectiveRefresh="true">
+      <Params/>
+    </PreservedContextParams>
+  </AutoLinkInfo>
+  <!--Page Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultPageParameterService">
+    <ModelName>Get User Credits</ModelName>
+    <NavigationAncestors>sv1|area1g</NavigationAncestors>
+    <LinkIdRequired>true</LinkIdRequired>
+    <PageParams>
+      <PageParam>miu7g.icp48g</PageParam>
+      <PageParam>link</PageParam>
+      <PageParam>nav</PageParam>
+      <PageParam>so</PageParam>
+      <PageParam>ajax</PageParam>
+      <PageParam>ajaxRefresh</PageParam>
+    </PageParams>
+  </WRParameterService>
+</Descriptor>

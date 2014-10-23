@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.operation.rtx.db.CreateUnitService" name="Create Actions">
+  <Entity>ent2g</Entity>
+  <BulkInsert>true</BulkInsert>
+  <SkipBlankRecords>false</SkipBlankRecords>
+  <DeleteAllBefore>true</DeleteAllBefore>
+  <Field param="cru1g.att5g" type="integer" attribute="att5g">oid</Field>
+  <Field param="cru1g.att6g" type="string" attribute="att6g">thematicArea</Field>
+  <Field param="cru1g.att7g" type="string" attribute="att7g">actionName</Field>
+  <Field param="cru1g.att8g" type="integer" attribute="att8g">actionId</Field>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Create Actions</ModelName>
+    <ParentContainer>opm5g</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="cru1g">cru1g.att8g</OperationParam>
+      <OperationParam unit="cru1g">cru1g.att7g</OperationParam>
+      <OperationParam unit="cru1g">cru1g.att6g</OperationParam>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln28g</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.content.rtx.db.PowerIndexUnitService" name="List Of Users">
+  <Results maxResults="" blockFactor="20" blockWindow=""/>
+  <SortHistorySize>1</SortHistorySize>
+  <Checkable>false</Checkable>
+  <Query entity="User">
+    <Output id="userOID" name="oid" index="0"/>
+    <Output id="att14" name="lastName" index="1"/>
+    <Output id="att26" name="isoCode" index="2"/>
+    <Output id="att16" name="city" index="3"/>
+    <Output id="att13" name="firstName" index="4"/>
+    <Output id="att22" name="publicProfile" index="5"/>
+    <Output id="att21" name="geographicalArea" index="6"/>
+    <Output id="att399" name="bigPhoto" blob="true" index="7"/>
+    <Output id="att18" name="country" index="8"/>
+    <Output id="password" name="password" index="9"/>
+    <Output id="email" name="email" index="10"/>
+    <Output id="userName" name="username" index="11"/>
+    <Output id="att31" name="birthDate" index="12"/>
+    <HQL>select a_user.oid, a_user.lastName, a_user.isoCode, a_user.city, a_user.firstName, a_user.publicProfile, a_user.geographicalArea, a_user.bigPhotoRef, a_user.country, a_user.password, a_user.email, a_user.username, a_user.birthDate from User a_user order by $$SORT_CRITERIA$$</HQL>
+  </Query>
+  <SortAttributes>
+    <Attribute id="att13" dynamic="true" order="asc">a_user.firstName</Attribute>
+    <Attribute id="att14" dynamic="true" order="asc">a_user.lastName</Attribute>
+    <Attribute id="att13" dynamic="false" order="asc">a_user.firstName</Attribute>
+    <Attribute id="att14" dynamic="false" order="asc">a_user.lastName</Attribute>
+  </SortAttributes>
+  <wr:Validation xmlns:wr="http://www.webratio.com/2013/WebML/WRValidation">
+    <wr:ValidationLink elementId="pwu1" linkId="ln33" action="validate"/>
+  </wr:Validation>
+</Descriptor>

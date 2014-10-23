@@ -1,0 +1,25 @@
+#?delimiters [%, %], [%=, %]
+<wr:Output name="gamifiedApplication"/>
+<wr:Output name="actionName"/>
+<wr:Output name="actionOid"/>
+
+[%
+	 
+	
+	def actions=document.selectNodes("//action")
+    
+	def gamifiedApplication=[]
+	def actionName=[]
+	def actionOid=[]
+ 
+	for(action in actions){
+		gamifiedApplication.add(action.selectSingleNode("gamifiedApplication").getText())
+		actionName.add(action.selectSingleNode("actionName").getText())
+		actionOid.add(action.selectSingleNode("actionOid").getText())
+		}	
+
+	outputParams.gamifiedApplication = gamifiedApplication
+	outputParams.actionName = actionName
+	outputParams.actionOid = actionOid
+
+%]

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.utility.rtx.db.SelectorUnitService" name="Selector5">
+  <MaxResults/>
+  <Query entity="User">
+    <Input id="p0" param="acond5" type="string" implied="false" expandStyle="in" function="upper" attribute="email"/>
+    <Output id="userOID" name="oid" index="0"/>
+    <HQL>select a_user.oid from User a_user
+      <Where defaultPolicy="fill" allImplied="false">(({[p0]upper(safe_cast(a_user.email)) in(?)}))</Where>
+    </HQL>
+  </Query>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Selector5</ModelName>
+    <ParentContainer>opg1</ParentContainer>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="seu5">acond5</OperationParam>
+      <Params>cru2.att13|cru2.att14|cru2.att16|cru2.att18|sfld6_presel|fld17_slot|fld12_slot|miu3.icp29g|miu3.icp37g|fld4_slot|fld26_slot|miu3.icp33g|pcp13|pcp12|cru2.email|pcp11|cru2.att21|pcp10|cru2.att22|sp|inn1.isnotnull|fld22_slot|mssu2.shownMessages|miu3.icp36g|fld16_slot|miu3.icp32g|pwu1.block|kcond3.userOID|miu3.icp41g|miu3.icp31g|link|cru2.userName|cru2.password|pwu1.newSortAttribute|fld18_slot|cmplink|fld10_slot|fld24_slot|miu3.icp35g|fld19_slot|cru2.att29|fld21_slot|pcp14|cru2.att26|pcp15|miu3.icp40g|miu3.icp30g|miu3.icp39g|miu3.icp38g|pcp9|sfld5_presel|pcp6|pcp5|fld20_slot|pcp8|pwu1.sortCriteria|fld11_slot|pcp7|fld23_slot|pcp2|pcp4|pcp3|cru2.att399|cru2.att31|miu3.icp34g|smc</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln8</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

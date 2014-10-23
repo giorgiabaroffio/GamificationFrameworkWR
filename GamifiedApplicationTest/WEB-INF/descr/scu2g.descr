@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.utility.rtx.ScriptUnitService" name="Script2">
+  <Script xml:space="preserve">#input String gamifiedname, String[] userEmail, String[] actions, Integer numberOfActions
+#output String[] appName, String[] emailUser, String[] actionName
+
+import java.util.Random
+import com.webratio.rtx.core.BeanHelper
+
+ArrayList appName = new ArrayList()
+ArrayList emailUser = new ArrayList()
+ArrayList actionName = new ArrayList()
+
+Random randUser = new Random()
+Random randAction = new Random()
+
+def randomUserMaxNumber = userEmail.size()
+def randomActionMaxNumber = actions.size()
+
+//println "randomUserMaxNumber "+randomUserMaxNumber
+//println "randomActionMaxNumber "+randomActionMaxNumber
+
+def userN
+def actionN
+
+def iterateActions = 20
+
+if(!BeanHelper.isNullOrEmptyString(numberOfActions)){
+	iterateActions = numberOfActions			
+}
+
+//println "NumActions "+iterateActions
+
+(1..iterateActions).each{
+	userN = userEmail[randUser.nextInt(randomUserMaxNumber)]
+	actionN = actions[randAction.nextInt(randomActionMaxNumber)]
+	//println "User "+userN 	
+	//println "Action "+actionN
+	emailUser.add(userN)
+	actionName.add(actionN)
+	appName.add(gamifiedname)	
+}
+
+return ["appName": appName, "actionName": actionName, "emailUser": emailUser]</Script>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Script2</ModelName>
+    <ParentContainer>opm2g</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="scu2g">scu2g.actions</OperationParam>
+      <OperationParam unit="scu2g">scu2g.userEmail</OperationParam>
+      <OperationParam unit="scu2g">scu2g.gamifiedname</OperationParam>
+      <OperationParam unit="scu2g">scu2g.numberOfActions</OperationParam>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln11g</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

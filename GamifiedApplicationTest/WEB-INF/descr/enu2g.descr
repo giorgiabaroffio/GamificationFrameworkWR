@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.content.rtx.EntryUnitService" name="Vote a comment">
+  <FormFields>
+    <SelectionField id="sfld2g" name="User" type="string" localized="false" value="" splitOutput="">
+      <Slot id="sfld2g_label" label="true" output="false"/>
+      <Slot id="sfld2g_output" label="false" output="true"/>
+    </SelectionField>
+    <SelectionField id="sfld3g" name="Comment" type="string" localized="false" value="" splitOutput="">
+      <Slot id="sfld3g_label" label="true" output="false"/>
+      <Slot id="sfld3g_output" label="false" output="true"/>
+    </SelectionField>
+  </FormFields>
+  <wr:Validation xmlns:wr="http://www.webratio.com/2013/WebML/WRValidation">
+    <wr:ValidationLink elementId="enu2g" linkId="ln17g" action="validate"/>
+  </wr:Validation>
+</Descriptor>

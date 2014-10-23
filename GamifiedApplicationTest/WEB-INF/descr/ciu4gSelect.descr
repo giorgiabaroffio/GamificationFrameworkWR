@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultLinkService">
+  <Target>page2g</Target>
+  <Secure>false</Secure>
+  <Source>ciu4g</Source>
+  <SourcePage>page2g</SourcePage>
+  <ReachableAlternativePages></ReachableAlternativePages>
+  <Navigates>true</Navigates>
+  <StartsTransaction>false</StartsTransaction>
+  <EndsTransaction>false</EndsTransaction>
+  <StartPageIdRequiredByTarget>true</StartPageIdRequiredByTarget>
+  <PreservedContextParams>
+    <Params>ciu4gPreload</Params>
+  </PreservedContextParams>
+  <PreservedContextParams selectiveRefresh="true">
+    <Params>ciu4gPreload</Params>
+  </PreservedContextParams>
+  <ContextPropagations>
+    <ContextPropagation targetParam="ciu4gPreload" sourceUnit="ciu4g" sourceParam="selectedImage"/>
+  </ContextPropagations>
+  <PageActions>
+    <Close pages=""/>
+  </PageActions>
+</Descriptor>

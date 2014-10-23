@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultPageService" name="Test Forum Actions">
+  <ParentContainer>sv1</ParentContainer>
+  <Secure>false</Secure>
+  <Localized>false</Localized>
+  <CheckPermission>false</CheckPermission>
+  <Alternatives/>
+  <ProtectedSubPages/>
+  <Navigations knownEffects="#pr#">
+    <Navigation name="0" nonContextual="true" interPage="always" links="page4g"/>
+    <Navigation name="1" nonContextual="true" interPage="always" links="page4g.link"/>
+    <Navigation name="2" links="page4g.auto-link"/>
+    <Navigation name="3" links="page4g.auto-link" selectiveRefresh="true"/>
+    <Navigation name="4" links="ln17g|impl" postPropagatedLink="ln17g"/>
+    <Navigation name="5" links="ln17g|oln30g" effects="#pr#"/>
+  </Navigations>
+  <ContextInitServices/>
+  <ContextInits></ContextInits>
+  <UselessPreserves>
+    <UselessPreserve navs="3|2|5|4" futile=""/>
+  </UselessPreserves>
+  <LinkSequence>ln15g|ln16g</LinkSequence>
+  <UnitComputations>
+    <UnitComputation unit="enu2g" formBased="true">
+      <NavigationCondition selectiveRefresh="true" effects="#pr#"/>
+      <RefreshFormAll navs="1|0|5|4"/>
+    </UnitComputation>
+    <UnitComputation unit="seu3g">
+      <NavigationCondition selectiveRefresh="true" effects="#pr#"/>
+    </UnitComputation>
+    <UnitComputation unit="seu4g">
+      <NavigationCondition selectiveRefresh="true" effects="#pr#"/>
+    </UnitComputation>
+  </UnitComputations>
+  <ManualLinks>
+    <ManualLink>ln17g</ManualLink>
+  </ManualLinks>
+  <Variables></Variables>
+  <Conditions></Conditions>
+  <Layouts>
+    <Layout id="page4g_grid_0">
+      <Layout id="page4g_cell_0">
+        <Layout id="enu2g_0" unitId="enu2g"></Layout>
+      </Layout>
+    </Layout>
+  </Layouts>
+  <AutoLinkInfo>
+    <PreservedContextParams>
+      <Params/>
+    </PreservedContextParams>
+    <PreservedContextParams selectiveRefresh="true">
+      <Params/>
+    </PreservedContextParams>
+  </AutoLinkInfo>
+  <!--Page Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultPageParameterService">
+    <ModelName>Test Forum Actions</ModelName>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <LinkIdRequired>true</LinkIdRequired>
+    <PageParams>
+      <PageParam preservedByForm="true" unit="enu2g">sfld3g_label</PageParam>
+      <PageParam preservedByForm="true" unit="enu2g">sfld2g_label</PageParam>
+      <PageParam preservedByForm="true" unit="enu2g">sfld3g_output</PageParam>
+      <PageParam preservedByForm="true" unit="enu2g">sfld2g_output</PageParam>
+      <PageParam>miu5g.icp46g</PageParam>
+      <PageParam>miu5g.icp3</PageParam>
+      <PageParam>miu5g.icp1</PageParam>
+      <PageParam>miu5g.icp4</PageParam>
+      <PageParam>miu5g.icp2</PageParam>
+      <PageParam>link</PageParam>
+      <PageParam>nav</PageParam>
+      <PageParam>so</PageParam>
+      <PageParam>ajax</PageParam>
+      <PageParam>ajaxRefresh</PageParam>
+    </PageParams>
+  </WRParameterService>
+</Descriptor>

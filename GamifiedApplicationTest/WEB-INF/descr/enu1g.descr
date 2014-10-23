@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.content.rtx.EntryUnitService" name="Get Actions">
+  <FormFields>
+    <Field id="fld3g" name="Thematic Area" type="string" localized="false"></Field>
+  </FormFields>
+  <wr:Validation xmlns:wr="http://www.webratio.com/2013/WebML/WRValidation">
+    <wr:ValidationLink elementId="enu1g" linkId="ln13g" action="validate"/>
+  </wr:Validation>
+</Descriptor>

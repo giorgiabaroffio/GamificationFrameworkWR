@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.utility.rtx.db.SelectorUnitService" name="Select Gamified App">
+  <MaxResults/>
+  <Query entity="ent2">
+    <Input id="p0" param="acond1" type="string" implied="false" expandStyle="in" attribute="att12"/>
+    <Output id="att11" name="oid" index="0"/>
+    <HQL>select a_thematicArea.oid from ThematicArea a_thematicArea
+      <Where defaultPolicy="fill" allImplied="false">(({[p0]safe_cast(a_thematicArea.name) in(?)}))</Where>order by a_thematicArea.name asc
+    </HQL>
+  </Query>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Select Gamified App</ModelName>
+    <ParentContainer>sv1</ParentContainer>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="seu4">acond1</OperationParam>
+      <Params>miu2g.icp15g|sfld2_output|sp|miu2g.icp14g|link|sfld1g_label|fld5_slot|miu1.icp3|miu1.icp2|miu1.icp1|cmplink|miu1.icp4|sfld1_output|sfld2_label|pcp1|sfld1g_output|smc|rcond1.att11|sfld1_label</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln5</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

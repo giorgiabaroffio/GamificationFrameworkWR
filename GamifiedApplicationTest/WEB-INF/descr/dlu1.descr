@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.operation.rtx.db.DeleteUnitService" name="Delete user on community">
+  <Entity>ent5</Entity>
+  <CascadeDeleteRoles>role4|role8|role10|role6</CascadeDeleteRoles>
+  <FetchMode>HQL</FetchMode>
+  <Query entity="ent5">
+    <Input id="p0" param="acond3" type="string" implied="false" expandStyle="in" attribute="att153"/>
+    <Output id="att149" name="oid2" index="0"/>
+    <HQL>select a_rank.oid2 from Rank a_rank
+      <Where defaultPolicy="fill" allImplied="false">(({[p0]safe_cast(a_rank.username) in(?)}))</Where>
+    </HQL>
+  </Query>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Delete user on community</ModelName>
+    <ParentContainer>opg2</ParentContainer>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="dlu1">acond3</OperationParam>
+      <Params>link|sfld6_presel|fld17_slot|fld12_slot|pwu1.newSortAttribute|fld18_slot|fld10_slot|cmplink|fld24_slot|fld4_slot|fld26_slot|fld19_slot|pcp13|pcp12|pcp10|kcond4.userOID|fld21_slot|pcp14|sp|pcp15|pcp9|sfld5_presel|pcp6|fld22_slot|pcp5|pcp8|mssu2.shownMessages|pwu1.sortCriteria|fld20_slot|pcp7|fld11_slot|fld23_slot|pcp2|fld16_slot|pcp4|pcp3|pwu1.block|smc|kcond3.userOID</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln15</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

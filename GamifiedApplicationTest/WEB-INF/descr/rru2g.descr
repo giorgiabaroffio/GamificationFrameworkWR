@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.ws.rtx.SoapRequestResponseUnitService" name="Get Actions">
+  <OneWay>false</OneWay>
+  <RequestHeaders></RequestHeaders>
+  <Endpoint>${endpoint_getactions_soap}</Endpoint>
+  <SoapVersion>1.1</SoapVersion>
+  <SoapActionURI/>
+  <Method name="" nsURI=""/>
+  <WebServiceParameters>
+    <Parameter name="getActions" nsURI="" value=""/>
+  </WebServiceParameters>
+  <CompressRequest/>
+  <Authentication signRequestMsg="false" httpAuthentication="false"/>
+  <Timeout/>
+  <SOTimeout/>
+  <RequestHeaders></RequestHeaders>
+  <SoapHeaders></SoapHeaders>
+  <Input type="document" transformer="WEB-INF/webservice/GetActionsService.input.template"/>
+  <Output fullEnvelope="" transformer="WEB-INF/webservice/GetActionsService.output.template"/>
+  <InputTransformParameters></InputTransformParameters>
+  <OutputTransformParameters></OutputTransformParameters>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Get Actions</ModelName>
+    <ParentContainer>opm5g</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln27g</Link>
+      <Link resultCode="error">kln3g</Link>
+    </OutgoingLinks>
+    <IsLinkHistoryRecorded>true</IsLinkHistoryRecorded>
+  </WRParameterService>
+</Descriptor>

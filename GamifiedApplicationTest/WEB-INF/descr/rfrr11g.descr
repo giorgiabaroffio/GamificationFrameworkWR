@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.ws.rtx.RestFulRequestResponseUnitService" name="Get User Rewards">
+  <Endpoint>${endpoint_redeem_user_reward_webserviceREST}</Endpoint>
+  <RequestMethod>POST</RequestMethod>
+  <RequestContentType>JSON</RequestContentType>
+  <ResponseContentType>JSON</ResponseContentType>
+  <RequestHeaders></RequestHeaders>
+  <QueryStringParameters></QueryStringParameters>
+  <RequestBodyParameters>
+    <RequestBodyParameter id="rrp11g" name="JSON" minCard="1" maxCard="1" _sel="t" isComplexType="true">
+      <SimpleParameterFragment id="spf9g" name="idReward" minCard="1" maxCard="1" xsdType="{http://www.w3.org/2001/XMLSchema}integer[SimpleType]" _sel="t"/>
+      <SimpleParameterFragment id="spf10g" name="userEmail" minCard="1" maxCard="1" _sel="t"/>
+    </RequestBodyParameter>
+  </RequestBodyParameters>
+  <ResponseBodyParameters></ResponseBodyParameters>
+  <ResponseHeaders></ResponseHeaders>
+  <CompressRequest>false</CompressRequest>
+  <Authentication httpAuthentication="false"/>
+  <Timeout/>
+  <SOTimeout/>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Get User Rewards</ModelName>
+    <ParentContainer>opg4g</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="rfrr11g">rrp11g.JSON$idReward</OperationParam>
+      <OperationParam unit="rfrr11g">rrp11g.JSON$userEmail</OperationParam>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln52g</Link>
+      <Link resultCode="error">kln17g</Link>
+    </OutgoingLinks>
+    <IsLinkHistoryRecorded>true</IsLinkHistoryRecorded>
+  </WRParameterService>
+</Descriptor>

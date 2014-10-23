@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.operation.rtx.db.DeleteUnitService" name="Delete Action Instance">
+  <Entity>ent7</Entity>
+  <CascadeDeleteRoles/>
+  <FetchMode>HQL</FetchMode>
+  <Query entity="ent7">
+    <Input id="p0" param="acond11g" type="integer" implied="false" attribute="att41"/>
+    <Output id="att41" name="oid" index="0"/>
+    <HQL>select a_actionInstance.oid from ActionInstance a_actionInstance
+      <Where defaultPolicy="fill" allImplied="false">((a_actionInstance.oid is not null))</Where>
+    </HQL>
+  </Query>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Delete Action Instance</ModelName>
+    <ParentContainer>sv1</ParentContainer>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <Params>mfu1g.att134|sp|mfu1g.att145|cmplink|mfu1g.att144|link|smc</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln20g</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

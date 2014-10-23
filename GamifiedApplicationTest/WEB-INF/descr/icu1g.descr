@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.module.rtx.CollectorUnitService" name="">
+  <Type>INPUT</Type>
+  <Parameter name="BirthDate">icp1g</Parameter>
+  <Parameter name="City">icp2g</Parameter>
+  <Parameter name="Email">icp3g</Parameter>
+  <Parameter name="Country">icp4g</Parameter>
+  <Parameter name="First Name">icp5g</Parameter>
+  <Parameter name="Last Name">icp6g</Parameter>
+  <Parameter name="Iso Code">icp7g</Parameter>
+  <Parameter name="Public Profile">icp8g</Parameter>
+  <Parameter name="UserName">icp9g</Parameter>
+  <Parameter name="Password">icp10g</Parameter>
+  <Parameter name="GeoArea">icp11g</Parameter>
+  <Parameter name="Internal">icp12g</Parameter>
+  <Parameter name="Photo">icp13g</Parameter>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName/>
+    <ParentContainer>opm1g</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="icu1g">icp13g</OperationParam>
+      <OperationParam unit="icu1g">icp6g</OperationParam>
+      <OperationParam unit="icu1g">icp1g</OperationParam>
+      <OperationParam unit="icu1g">icp10g</OperationParam>
+      <OperationParam unit="icu1g">icp7g</OperationParam>
+      <OperationParam unit="icu1g">icp11g</OperationParam>
+      <OperationParam unit="icu1g">icp12g</OperationParam>
+      <OperationParam unit="icu1g">icp9g</OperationParam>
+      <OperationParam unit="icu1g">icp8g</OperationParam>
+      <OperationParam unit="icu1g">icp3g</OperationParam>
+      <OperationParam unit="icu1g">icp2g</OperationParam>
+      <OperationParam unit="icu1g">icp4g</OperationParam>
+      <OperationParam unit="icu1g">icp5g</OperationParam>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln1g</Link>
+      <Link resultCode="success" transport="true">ln4g</Link>
+      <Link resultCode="error" transport="true">ln4g</Link>
+    </OutgoingLinks>
+    <IsLinkHistoryRecorded>true</IsLinkHistoryRecorded>
+  </WRParameterService>
+</Descriptor>

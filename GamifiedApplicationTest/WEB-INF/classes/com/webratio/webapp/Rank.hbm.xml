@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="true" default-cascade="none" default-access="property" default-lazy="true">
+  <joined-subclass name="com.webratio.webapp.Rank" extends="com.webratio.webapp.Usertable" table="`community_user`" dynamic-update="true" dynamic-insert="true" select-before-update="false">
+    <key on-delete="noaction">
+      <column name="`oid`"/>
+    </key>
+    <property name="companyName" column="`company_name`" type="java.lang.String" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="firstName" column="`first_name`" type="java.lang.String" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="lastName" column="`last_name`" type="java.lang.String" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="city" column="`city`" type="java.lang.String" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="smallPhoto" column="`small_photo`" type="java.lang.String" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="country" column="`country`" type="java.lang.String" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="publicProfile" column="`public_profile`" type="java.lang.Boolean" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="geographicalArea" column="`geographical_area`" type="java.lang.String" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="bigPhoto" column="`big_photo`" type="java.lang.String" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="participationMonthly" column="`participation_monthly`" type="java.math.BigDecimal" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="birthdate" column="`birthdate`" type="java.sql.Date" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="participation" column="`participation`" type="java.math.BigDecimal" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="credit" column="`credit`" type="java.math.BigDecimal" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="isoCode" column="`iso_code`" type="java.lang.String" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <set name="rankToNotification" inverse="true" mutable="true" sort="unsorted" optimistic-lock="true" embed-xml="true">
+      <key on-delete="noaction">
+        <column name="`rank_oid`"/>
+      </key>
+      <one-to-many class="com.webratio.webapp.Notification" not-found="exception" embed-xml="true"/>
+    </set>
+    <set name="rankToRewardinstance" inverse="true" mutable="true" sort="unsorted" optimistic-lock="true" embed-xml="true">
+      <key on-delete="noaction">
+        <column name="`rank_oid`"/>
+      </key>
+      <one-to-many class="com.webratio.webapp.RewardInstance" not-found="exception" embed-xml="true"/>
+    </set>
+    <set name="rankToActioninstance" inverse="true" mutable="true" sort="unsorted" optimistic-lock="true" embed-xml="true">
+      <key on-delete="noaction">
+        <column name="`rank_oid`"/>
+      </key>
+      <one-to-many class="com.webratio.webapp.ActionInstance" not-found="exception" embed-xml="true"/>
+    </set>
+    <set name="rankToBadgeinstance" inverse="true" mutable="true" sort="unsorted" optimistic-lock="true" embed-xml="true">
+      <key on-delete="noaction">
+        <column name="`rank_oid`"/>
+      </key>
+      <one-to-many class="com.webratio.webapp.BadgeInstance" not-found="exception" embed-xml="true"/>
+    </set>
+  </joined-subclass>
+  <!-- mapping for relationship 'RankToNotification[role4]' -->
+  <class entity-name="com.webratio.webapp.Rel_Rank_to_rankToNotification" table="`notification`" dynamic-update="true" dynamic-insert="true" mutable="true" polymorphism="implicit" select-before-update="false" optimistic-lock="version">
+    <id name="target_oid" column="`oid`" type="java.lang.Integer"/>
+    <property name="source_oid2" column="`rank_oid`" type="java.lang.Integer" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+  </class>
+  <!-- mapping for relationship 'RankToRewardinstance[role6]' -->
+  <class entity-name="com.webratio.webapp.Rel_Rank_to_rankToRewardinstance" table="`reward_instance`" dynamic-update="true" dynamic-insert="true" mutable="true" polymorphism="implicit" select-before-update="false" optimistic-lock="version">
+    <id name="target_oid" column="`oid`" type="java.lang.Integer"/>
+    <property name="source_oid2" column="`rank_oid`" type="java.lang.Integer" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+  </class>
+  <!-- mapping for relationship 'RankToActioninstance[role8]' -->
+  <class entity-name="com.webratio.webapp.Rel_Rank_to_rankToActioninstance" table="`action_instance`" dynamic-update="true" dynamic-insert="true" mutable="true" polymorphism="implicit" select-before-update="false" optimistic-lock="version">
+    <id name="target_oid" column="`oid`" type="java.lang.Integer"/>
+    <property name="source_oid2" column="`rank_oid`" type="java.lang.Integer" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+  </class>
+  <!-- mapping for relationship 'RankToBadgeinstance[role10]' -->
+  <class entity-name="com.webratio.webapp.Rel_Rank_to_rankToBadgeinstance" table="`badge_instance`" dynamic-update="true" dynamic-insert="true" mutable="true" polymorphism="implicit" select-before-update="false" optimistic-lock="version">
+    <id name="target_oid" column="`oid`" type="java.lang.Integer"/>
+    <property name="source_oid2" column="`rank_oid`" type="java.lang.Integer" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+  </class>
+</hibernate-mapping>

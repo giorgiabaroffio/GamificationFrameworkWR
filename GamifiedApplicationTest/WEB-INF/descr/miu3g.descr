@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.module.rtx.ModuleInstanceUnitService" name="">
+  <Module operation="true" singleLayout="false">opm2</Module>
+  <InputCollectorId>icu2</InputCollectorId>
+  <InputParameter>icp1</InputParameter>
+  <InputParameter>icp2</InputParameter>
+  <InputParameter>icp3</InputParameter>
+  <InputParameter>icp4</InputParameter>
+  <InputParameter>icp46g</InputParameter>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName/>
+    <ParentContainer>opm2g</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="miu3g">miu3g.icp4</OperationParam>
+      <OperationParam unit="miu3g">miu3g.icp3</OperationParam>
+      <OperationParam unit="miu3g">miu3g.icp2</OperationParam>
+      <OperationParam unit="miu3g">miu3g.icp1</OperationParam>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln12g</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

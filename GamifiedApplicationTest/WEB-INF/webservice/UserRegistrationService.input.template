@@ -1,0 +1,84 @@
+#?delimiters [%, %], [%=, %]
+<wr:Input name="firstname"/>
+<wr:Input name="lastname"/>
+<wr:Input name="username"/>
+<wr:Input name="password"/>
+<wr:Input name="city"/>
+<wr:Input name="birthdate"/>
+<wr:Input name="isocode"/>
+<wr:Input name="country"/>
+<wr:Input name="geoarea"/>
+<wr:Input name="publicprofile"/>
+<wr:Input name="email"/>
+<wr:Input name="photo"/>
+<wr:Input name="internal"/>
+
+[%import org.apache.commons.io.IOUtils
+import com.webratio.rtx.blob.BLOBData
+
+  import sun.misc.BASE64Encoder
+  import com.webratio.rtx.blob.UploadedBLOBData
+  import com.webratio.rtx.core.BeanHelper
+  
+  Object avatar = BeanHelper.asObject(inputParams.get("photo"))
+  Object avatarName = null
+  
+  try{
+    if (avatar != null){
+      if (avatar instanceof UploadedBLOBData) {
+	      UploadedBLOBData img = (UploadedBLOBData)avatar
+	      avatarName = img.getName()
+	      byte[] by = new byte[img.getLength()]
+	      img.openFileInputStream().read(by)
+	      BASE64Encoder be = new BASE64Encoder()
+	      avatar = be.encode(by)
+	   } else if (avatar instanceof BLOBData) {
+	      BLOBData img = (BLOBData)avatar
+          avatarName = img.getName()
+	      byte[] by = new byte[img.getLength()]
+	      img.openFileInputStream().read(by)
+	      BASE64Encoder be = new BASE64Encoder()
+	      avatar = be.encode(by)
+	   } else {
+	     avatar = null
+         avatarName = null
+	   }
+    } else {
+      avatar = null
+      avatarName = null
+    }
+  }catch(Exception e){
+    e.printStackTrace()
+  }
+%]
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://www.webratio.com/webservices/getUserRegistration">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:getUserRegistration>
+         <DATA>
+            <userdata>
+               <firstname>[%= inputParams.firstname %]</firstname>
+               <lastname>[%= inputParams.lastname %]</lastname>
+               <username>[%= inputParams.username %]</username>
+               <password>[%= inputParams.password %]</password>
+               <city>[%= inputParams.city %]</city>
+               <birthdate>[%= inputParams.birthdate %]</birthdate>
+               <isocode>[%= inputParams.isocode %]</isocode>
+               <country>[%= inputParams.country %]</country>
+			   <geoarea>[%= inputParams.geoarea %]</geoarea>
+               <publicprofile>[%= inputParams.publicprofile %]</publicprofile>
+               <email>[%= inputParams.email %]</email>  
+               <internal>[%= inputParams.internal %]</internal>     
+               [% if (avatarName != null) { %]
+               <photo>
+               		<code><![CDATA[[%= avatar %]]]></code>
+              		<name><![CDATA[[%= avatarName %]]]></name>
+               </photo>
+               [% } %]                       
+            </userdata>   
+         </DATA>
+      </get:getUserRegistration>
+   </soapenv:Body>
+</soapenv:Envelope>

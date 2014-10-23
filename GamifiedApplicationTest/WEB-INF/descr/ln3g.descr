@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultLinkService">
+  <Target>page7</Target>
+  <Secure>false</Secure>
+  <Source>ciu4g</Source>
+  <SourcePage>page2g</SourcePage>
+  <ReachableAlternativePages></ReachableAlternativePages>
+  <Navigates>true</Navigates>
+  <StartsTransaction>false</StartsTransaction>
+  <EndsTransaction>false</EndsTransaction>
+  <StartPageIdRequiredByTarget>false</StartPageIdRequiredByTarget>
+  <PreservedContextParams>
+    <Params/>
+  </PreservedContextParams>
+  <ContextPropagations>
+    <ContextPropagation targetParam="fld11_slot" sourceUnit="ciu4g" sourceParam="croppedImage"/>
+  </ContextPropagations>
+  <PageActions>
+    <Close pages="page2g"/>
+    <Close pages=""/>
+  </PageActions>
+</Descriptor>

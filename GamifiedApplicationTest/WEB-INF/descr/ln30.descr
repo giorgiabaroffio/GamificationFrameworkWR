@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultLinkService">
+  <Target>pcu3</Target>
+  <Secure>false</Secure>
+  <Source>enu6</Source>
+  <SourcePage>page7</SourcePage>
+  <ReachableAlternativePages></ReachableAlternativePages>
+  <Navigates>true</Navigates>
+  <StartsTransaction>false</StartsTransaction>
+  <EndsTransaction>false</EndsTransaction>
+  <StartPageIdRequiredByTarget>true</StartPageIdRequiredByTarget>
+  <PreservedContextParams>
+    <Params/>
+  </PreservedContextParams>
+  <ContextPropagations>
+    <ContextPropagation targetParam="pcp3" sourceUnit="enu6" sourceParam="fld20"/>
+    <ContextPropagation targetParam="pcp4" sourceUnit="enu6" sourceParam="fld21"/>
+    <ContextPropagation targetParam="pcp5" sourceUnit="enu6" sourceParam="fld22"/>
+    <ContextPropagation targetParam="pcp7" sourceUnit="enu6" sourceParam="fld17"/>
+    <ContextPropagation targetParam="pcp8" sourceUnit="enu6" sourceParam="sfld6"/>
+    <ContextPropagation targetParam="pcp9" sourceUnit="enu6" sourceParam="sfld5"/>
+    <ContextPropagation targetParam="pcp10" sourceUnit="enu6" sourceParam="fld18"/>
+    <ContextPropagation targetParam="pcp11" sourceUnit="enu6" sourceParam="fld26"/>
+    <ContextPropagation targetParam="pcp13" sourceUnit="enu6" sourceParam="fld23"/>
+    <ContextPropagation targetParam="pcp14" sourceUnit="enu6" sourceParam="fld24"/>
+    <ContextPropagation targetParam="pcp15" sourceUnit="enu6" sourceParam="fld27"/>
+    <ContextPropagation targetParam="pcp6" sourceUnit="enu6" sourceParam="fld19"/>
+    <ContextPropagation targetParam="pcp2" sourceUnit="enu6" sourceParam="fld11"/>
+    <ContextPropagation targetParam="pcp12" sourceUnit="enu6" sourceParam="fld4"/>
+  </ContextPropagations>
+  <PageActions>
+    <PrepareClose pages=""/>
+    <PrepareClose pages="page2|page7"/>
+    <PrepareClose pages="page7"/>
+  </PageActions>
+</Descriptor>

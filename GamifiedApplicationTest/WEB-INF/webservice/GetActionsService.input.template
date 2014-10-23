@@ -1,0 +1,8 @@
+#?delimiters [%, %], [%=, %]
+ 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://www.webratio.com/webservices/getActions">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:getActions/>
+   </soapenv:Body>
+</soapenv:Envelope> 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.content.rtx.db.PowerIndexUnitService" name="List of Users">
+  <Results maxResults="" blockFactor="10" blockWindow=""/>
+  <SortHistorySize>1</SortHistorySize>
+  <Checkable>false</Checkable>
+  <Query entity="User">
+    <Input id="p0" param="acond2g" type="boolean" implied="false" expandStyle="in" value="true" attribute="att22"/>
+    <Input id="p1" param="acond3g" type="string" implied="true" impliedText="1 = 1" expandStyle="or" prefixValue="%" suffixValue="%" attribute="att14"/>
+    <Input id="p2" param="acond4g" type="string" implied="true" impliedText="1 = 1" expandStyle="or" prefixValue="%" suffixValue="%" attribute="att13"/>
+    <Output id="userOID" name="oid" index="0"/>
+    <Output id="att14" name="lastName" index="1"/>
+    <Output id="email" name="email" index="2"/>
+    <Output id="att13" name="firstName" index="3"/>
+    <HQL>select a_user.oid, a_user.lastName, a_user.email, a_user.firstName from User a_user
+      <Where defaultPolicy="fill" allImplied="false">(({[p0]a_user.publicProfile in(?)})) and (({[p1]upper(safe_cast(a_user.lastName)) like upper(safe_cast(?))})) and (({[p2]upper(safe_cast(a_user.firstName)) like upper(safe_cast(?))}))</Where>
+    </HQL>
+  </Query>
+  <SortAttributes></SortAttributes>
+  <wr:Validation xmlns:wr="http://www.webratio.com/2013/WebML/WRValidation">
+    <wr:ValidationLink elementId="pwu1g" linkId="ln7g" action="validate"/>
+  </wr:Validation>
+</Descriptor>

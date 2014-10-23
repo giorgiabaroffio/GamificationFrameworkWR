@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.OperationModuleService">
+  <InputCollectorUnit name="" id="icu2g">
+    <InputParameter id="icp14g" name="Application Name"/>
+    <InputParameter id="icp15g" name="Number Of Actions To Simulate"/>
+  </InputCollectorUnit>
+  <OKCollectorUnits>okcu2g</OKCollectorUnits>
+  <KOCollectorUnits/>
+  <OperationUnits>icu2g|seu1g|seu2g|scu2g|miu3g|okcu2g</OperationUnits>
+</Descriptor>

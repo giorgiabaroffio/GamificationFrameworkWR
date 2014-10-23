@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.ws.rtx.RestFulRequestResponseUnitService" name="Get Actions">
+  <Endpoint>${endpoint_get_actions_webserviceREST}</Endpoint>
+  <RequestMethod>GET</RequestMethod>
+  <RequestContentType/>
+  <ResponseContentType>JSON</ResponseContentType>
+  <RequestHeaders></RequestHeaders>
+  <QueryStringParameters>
+    <QueryStringParameter id="rrp5g" name="app" minCard="1" maxCard="1" _sel="t"/>
+  </QueryStringParameters>
+  <RequestBodyParameters></RequestBodyParameters>
+  <ResponseBodyParameters></ResponseBodyParameters>
+  <ResponseHeaders></ResponseHeaders>
+  <CompressRequest>false</CompressRequest>
+  <Authentication httpAuthentication="false"/>
+  <Timeout/>
+  <SOTimeout/>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Get Actions</ModelName>
+    <ParentContainer>opg1g</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="rfrr6g">rrp5g</OperationParam>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln35g</Link>
+      <Link resultCode="error">kln9g</Link>
+    </OutgoingLinks>
+    <IsLinkHistoryRecorded>true</IsLinkHistoryRecorded>
+  </WRParameterService>
+</Descriptor>

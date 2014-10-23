@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.content.rtx.EntryUnitService" name="Create New User">
+  <FormFields>
+    <Field id="fld1" name="First Name" type="string" localized="false">
+      <Slot id="fld1_slot" label="true" output="true"/>
+    </Field>
+    <Field id="fld3" name="Last Name" type="string" localized="false">
+      <Slot id="fld3_slot" label="true" output="true"/>
+    </Field>
+    <Field id="fld6" name="Email" type="string" localized="false">
+      <Slot id="fld6_slot" label="true" output="true"/>
+    </Field>
+    <Field id="fld7" name="BirthDate" type="date" localized="true">
+      <Slot id="fld7_slot" label="true" output="true"/>
+    </Field>
+    <Field id="fld8" name="City" type="string" localized="false">
+      <Slot id="fld8_slot" label="true" output="true"/>
+    </Field>
+    <Field id="fld9" name="Country" type="string" localized="false">
+      <Slot id="fld9_slot" label="true" output="true"/>
+    </Field>
+    <Field id="fld12" name="Public profile" type="boolean" localized="true">
+      <Slot id="fld12_slot" label="true" output="true"/>
+    </Field>
+    <Field id="fld13" name="Username" type="string" localized="false">
+      <Slot id="fld13_slot" label="true" output="true"/>
+    </Field>
+    <Field id="fld14" name="Password" type="password" localized="false">
+      <Slot id="fld14_slot" label="true" output="true"/>
+    </Field>
+    <Field id="fld16" name="Internal User" type="boolean" localized="true">
+      <Slot id="fld16_slot" label="true" output="true"/>
+    </Field>
+    <Field id="fld10" name="Photo" type="blob" localized="false">
+      <Slot id="fld10_slot" label="true" output="true"/>
+    </Field>
+    <SelectionField id="sfld3" name="Language" type="string" localized="false" value="" splitOutput="">
+      <Slot id="slot1" label="true" output="false" value="English"/>
+      <Slot id="slot2" label="false" output="true" value="en"/>
+    </SelectionField>
+    <SelectionField id="sfld4" name="Geographical Area" type="string" localized="false" value="" splitOutput="">
+      <Slot id="slot3" label="true" output="true" value="Europe|North America|Latin America|Asia, Africa &amp; Oceania"/>
+    </SelectionField>
+  </FormFields>
+  <wr:Validation xmlns:wr="http://www.webratio.com/2013/WebML/WRValidation">
+    <wr:ValidationLink elementId="enu3" linkId="ln11" action="validate"/>
+    <MandatoryValidationRule service="com.webratio.units.validation.MandatoryValidationRuleService" elementId="fld1" id="mnd2" name="Mandatory2">
+      <CompanionField/>
+    </MandatoryValidationRule>
+    <MandatoryValidationRule service="com.webratio.units.validation.MandatoryValidationRuleService" elementId="fld3" id="mnd3" name="Mandatory3">
+      <CompanionField/>
+    </MandatoryValidationRule>
+    <MandatoryValidationRule service="com.webratio.units.validation.MandatoryValidationRuleService" elementId="fld6" id="mnd1" name="Mandatory1">
+      <CompanionField/>
+    </MandatoryValidationRule>
+    <EMailValidationRule service="com.webratio.units.validation.EMailValidationRuleService" elementId="fld6" id="email1g" name="EMail1"/>
+    <MandatoryValidationRule service="com.webratio.units.validation.MandatoryValidationRuleService" elementId="fld8" id="mnd1g" name="Mandatory1">
+      <CompanionField/>
+    </MandatoryValidationRule>
+    <MandatoryValidationRule service="com.webratio.units.validation.MandatoryValidationRuleService" elementId="fld9" id="mnd2g" name="Mandatory2">
+      <CompanionField/>
+    </MandatoryValidationRule>
+    <MandatoryValidationRule service="com.webratio.units.validation.MandatoryValidationRuleService" elementId="fld12" id="mnd5" name="Mandatory5">
+      <CompanionField/>
+    </MandatoryValidationRule>
+    <MandatoryValidationRule service="com.webratio.units.validation.MandatoryValidationRuleService" elementId="fld13" id="mnd6" name="Mandatory6">
+      <CompanionField/>
+    </MandatoryValidationRule>
+    <MandatoryValidationRule service="com.webratio.units.validation.MandatoryValidationRuleService" elementId="fld14" id="mnd4" name="Mandatory4">
+      <CompanionField/>
+    </MandatoryValidationRule>
+    <MandatoryValidationRule service="com.webratio.units.validation.MandatoryValidationRuleService" elementId="sfld3" id="mnd7" name="Mandatory7">
+      <CompanionField/>
+    </MandatoryValidationRule>
+    <MandatoryValidationRule service="com.webratio.units.validation.MandatoryValidationRuleService" elementId="fld16" id="mnd8" name="Mandatory8">
+      <CompanionField/>
+    </MandatoryValidationRule>
+  </wr:Validation>
+</Descriptor>

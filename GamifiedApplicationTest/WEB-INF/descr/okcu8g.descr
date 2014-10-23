@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.module.rtx.CollectorUnitService" name="OK">
+  <Type>OK</Type>
+  <Parameter name="User Email" value="">ocp4g</Parameter>
+  <Parameter name="Credit Available" value="">ocp5g</Parameter>
+  <Parameter name="Credit Spent" value="">ocp6g</Parameter>
+  <Parameter name="Total Credit" value="">ocp7g</Parameter>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>OK</ModelName>
+    <ParentContainer>opm9g</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="okcu8g">ocp5g</OperationParam>
+      <OperationParam unit="okcu8g">ocp4g</OperationParam>
+      <OperationParam unit="okcu8g">ocp7g</OperationParam>
+      <OperationParam unit="okcu8g">ocp6g</OperationParam>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks></OutgoingLinks>
+    <IsLinkHistoryRecorded>true</IsLinkHistoryRecorded>
+  </WRParameterService>
+</Descriptor>

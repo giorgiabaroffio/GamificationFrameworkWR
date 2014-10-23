@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.ws.rtx.RestFulRequestResponseUnitService" name="Call User Registration Service">
+  <Endpoint>${endpoint_userupdate_webserviceREST}</Endpoint>
+  <RequestMethod>POST</RequestMethod>
+  <RequestContentType>JSON</RequestContentType>
+  <ResponseContentType>JSON</ResponseContentType>
+  <RequestHeaders></RequestHeaders>
+  <QueryStringParameters></QueryStringParameters>
+  <RequestBodyParameters>
+    <RequestBodyParameter id="rrp2g" name="JSON" minCard="1" maxCard="1" _sel="t" isComplexType="true">
+      <ComplexParameterFragment id="cpf2g" name="user" minCard="1" maxCard="-1" _sel="t"/>
+    </RequestBodyParameter>
+  </RequestBodyParameters>
+  <ResponseBodyParameters></ResponseBodyParameters>
+  <ResponseHeaders></ResponseHeaders>
+  <CompressRequest/>
+  <Authentication httpAuthentication="false"/>
+  <Timeout/>
+  <SOTimeout/>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Call User Registration Service</ModelName>
+    <ParentContainer>opm3g</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="rfrr3g">rrp2g.JSON$user</OperationParam>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln24g</Link>
+      <Link resultCode="error">kln7g</Link>
+    </OutgoingLinks>
+    <IsLinkHistoryRecorded>true</IsLinkHistoryRecorded>
+  </WRParameterService>
+</Descriptor>

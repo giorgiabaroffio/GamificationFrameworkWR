@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.utility.rtx.ScriptUnitService" name="Create JSON Request">
+  <Script path="WEB-INF/groovy/JSONRequestUserRegistrationService.groovy"/>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Create JSON Request</ModelName>
+    <ParentContainer>opg5g</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="scu11g">scu11g.internal</OperationParam>
+      <OperationParam unit="scu11g">scu11g.lastName</OperationParam>
+      <OperationParam unit="scu11g">scu11g.username</OperationParam>
+      <OperationParam unit="scu11g">scu11g.firstName</OperationParam>
+      <OperationParam unit="scu11g">scu11g.city</OperationParam>
+      <OperationParam unit="scu11g">scu11g.password</OperationParam>
+      <OperationParam unit="scu11g">scu11g.country</OperationParam>
+      <OperationParam unit="scu11g">scu11g.birthDate</OperationParam>
+      <OperationParam unit="scu11g">scu11g.geoArea</OperationParam>
+      <OperationParam unit="scu11g">scu11g.isoCode</OperationParam>
+      <OperationParam unit="scu11g">scu11g.publicProfile</OperationParam>
+      <OperationParam unit="scu11g">scu11g.photo</OperationParam>
+      <OperationParam unit="scu11g">scu11g.userEmail</OperationParam>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln57g</Link>
+      <Link resultCode="error">kln19g</Link>
+    </OutgoingLinks>
+    <IsLinkHistoryRecorded>true</IsLinkHistoryRecorded>
+  </WRParameterService>
+</Descriptor>

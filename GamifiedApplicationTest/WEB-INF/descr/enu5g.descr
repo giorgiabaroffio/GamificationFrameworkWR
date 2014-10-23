@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.content.rtx.EntryUnitService" name="Get User Rewards">
+  <FormFields>
+    <Field id="fld6g" name="User Email" type="string" localized="false"></Field>
+    <Field id="fld7g" name="Reward ID" type="integer" localized="true"></Field>
+  </FormFields>
+  <wr:Validation xmlns:wr="http://www.webratio.com/2013/WebML/WRValidation">
+    <wr:ValidationLink elementId="enu5g" linkId="ln23g" action="validate"/>
+    <MandatoryValidationRule service="com.webratio.units.validation.MandatoryValidationRuleService" elementId="fld6g" id="mnd10g" name="Mandatory8">
+      <CompanionField/>
+    </MandatoryValidationRule>
+    <MandatoryValidationRule service="com.webratio.units.validation.MandatoryValidationRuleService" elementId="fld7g" id="mnd11g" name="Mandatory11">
+      <CompanionField/>
+    </MandatoryValidationRule>
+  </wr:Validation>
+</Descriptor>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="true" default-cascade="none" default-access="property" default-lazy="true">
+  <class name="com.webratio.webapp.ActionType" table="`action_type`" dynamic-update="true" dynamic-insert="true" mutable="true" polymorphism="implicit" select-before-update="false" optimistic-lock="version">
+    <id name="oid" column="`oid`" type="java.lang.Integer">
+      <generator class="com.webratio.rtx.hibernate.MaxPlusOneIncrementGenerator"/>
+    </id>
+    <property name="name" column="`name`" type="java.lang.String" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="score" column="`score`" type="java.math.BigDecimal" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="reputation" column="`reputation`" type="java.lang.Boolean" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="participation" column="`participation`" type="java.lang.Boolean" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="area" column="`area`" type="java.lang.String" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="description" column="`description`" type="java.lang.String" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="checkTimeElapsed" column="`check_time_elapsed`" type="java.lang.Boolean" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="millisecondsTimeElapsed" column="`milliseconds_time_elapsed`" type="java.lang.Integer" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <property name="repeatable" column="`repeatable`" type="java.lang.Boolean" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+    <many-to-one name="actiontypeToGamifiedapplication" class="com.webratio.webapp.ThematicArea" update="true" insert="true" not-found="exception" unique="false" optimistic-lock="true" embed-xml="true">
+      <column name="`thematic_area_oid`"/>
+    </many-to-one>
+  </class>
+  <!-- mapping for relationship 'ActiontypeToGamifiedapplication[role1]' -->
+  <class entity-name="com.webratio.webapp.Rel_ActionType_to_actiontypeToGamifiedapplication" table="`action_type`" dynamic-update="true" dynamic-insert="true" mutable="true" polymorphism="implicit" select-before-update="false" optimistic-lock="version">
+    <id name="source_oid" column="`oid`" type="java.lang.Integer"/>
+    <property name="target_oid" column="`thematic_area_oid`" type="java.lang.Integer" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+  </class>
+</hibernate-mapping>

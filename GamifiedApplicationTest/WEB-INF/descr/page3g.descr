@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultPageService" name="Get Actions">
+  <ParentContainer>area1g</ParentContainer>
+  <Secure>false</Secure>
+  <Localized>false</Localized>
+  <CheckPermission>false</CheckPermission>
+  <Alternatives/>
+  <ProtectedSubPages/>
+  <Navigations knownEffects="#pr#">
+    <Navigation name="0" nonContextual="true" interPage="always" links="page3g"/>
+    <Navigation name="1" nonContextual="true" interPage="always" links="page3g.link"/>
+    <Navigation name="2" links="page3g.auto-link"/>
+    <Navigation name="3" links="page3g.auto-link" selectiveRefresh="true"/>
+    <Navigation name="4" links="ln13g|impl" postPropagatedLink="ln13g"/>
+    <Navigation name="5" links="ln13g|kln8g" effects="#pr#"/>
+    <Navigation name="6" links="ln13g|oln37g" effects="#pr#"/>
+    <Navigation name="7" links="pwu2gatt6g"/>
+    <Navigation name="8" links="pwu2gatt7g"/>
+  </Navigations>
+  <ContextInitServices/>
+  <ContextInits></ContextInits>
+  <UselessPreserves>
+    <UselessPreserve navs="2|7|4|8" effects="-" futile=""/>
+    <UselessPreserve navs="7|4|8" effects="#pr#" futile=""/>
+    <UselessPreserve navs="3|2|6|5" effects="#pr#" futile="pwu2g.newSortAttribute|pwu2g.sortCriteria"/>
+    <UselessPreserve navs="3|6|5" effects="-" futile="pwu2g.newSortAttribute|pwu2g.sortCriteria"/>
+  </UselessPreserves>
+  <LinkSequence>ln18g</LinkSequence>
+  <UnitComputations>
+    <UnitComputation unit="enu1g" formBased="true">
+      <NavigationCondition selectiveRefresh="true" effects="#pr#"/>
+      <RefreshFormAll navs="1|0|6|5|4"/>
+    </UnitComputation>
+    <UnitComputation unit="pwu2g" formBased="true">
+      <NavigationCondition selectiveRefresh="true" effects="#pr#"/>
+      <RefreshFormAll navs="1|0|6|5|4"/>
+      <RefreshForm navs="7|8" inputs="pwu2g.sortCriteria|pwu2g.newSortAttribute"/>
+    </UnitComputation>
+  </UnitComputations>
+  <ManualLinks>
+    <ManualLink>ln13g</ManualLink>
+    <ManualLink>pwu2gatt6g</ManualLink>
+    <ManualLink>pwu2gatt7g</ManualLink>
+  </ManualLinks>
+  <Variables></Variables>
+  <Conditions></Conditions>
+  <Layouts>
+    <Layout id="page3g_grid_0">
+      <Layout id="page3g_cell_0">
+        <Layout id="enu1g_0" unitId="enu1g"></Layout>
+      </Layout>
+      <Layout id="page3g_cell_12">
+        <Layout id="pwu2g_0" unitId="pwu2g"></Layout>
+      </Layout>
+    </Layout>
+  </Layouts>
+  <AutoLinkInfo>
+    <PreservedContextParams>
+      <Params>pwu2g.newSortAttribute|pwu2g.sortCriteria</Params>
+    </PreservedContextParams>
+    <PreservedContextParams selectiveRefresh="true">
+      <Params/>
+    </PreservedContextParams>
+  </AutoLinkInfo>
+  <!--Page Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultPageParameterService">
+    <ModelName>Get Actions</ModelName>
+    <NavigationAncestors>sv1|area1g</NavigationAncestors>
+    <LinkIdRequired>true</LinkIdRequired>
+    <PageParams>
+      <PageParam unit="pwu2g">pwu2g.sortCriteria</PageParam>
+      <PageParam unit="pwu2g">pwu2g.newSortAttribute</PageParam>
+      <PageParam>miu4g.icp47g</PageParam>
+      <PageParam>link</PageParam>
+      <PageParam>nav</PageParam>
+      <PageParam>so</PageParam>
+      <PageParam>ajax</PageParam>
+      <PageParam>ajaxRefresh</PageParam>
+    </PageParams>
+  </WRParameterService>
+</Descriptor>

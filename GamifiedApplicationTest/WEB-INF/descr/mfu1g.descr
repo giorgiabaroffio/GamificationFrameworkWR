@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.operation.rtx.db.ModifyUnitService" name="Update Credits">
+  <BulkUpdate>false</BulkUpdate>
+  <Entity>ent5</Entity>
+  <ModifiedAttributes>att145|att144|att134</ModifiedAttributes>
+  <ModifiedRoles/>
+  <FetchMode>HQL</FetchMode>
+  <Query entity="ent5">
+    <Input id="p0" param="acond15g" type="integer" implied="false" attribute="att149"/>
+    <Output id="att149" name="oid2" index="0"/>
+    <HQL>select a_rank.oid2 from Rank a_rank
+      <Where defaultPolicy="fill" allImplied="false">((a_rank.oid2 is not null))</Where>
+    </HQL>
+  </Query>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Update Credits</ModelName>
+    <ParentContainer>sv1</ParentContainer>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="mfu1g">mfu1g.att134</OperationParam>
+      <OperationParam unit="mfu1g">mfu1g.att145</OperationParam>
+      <OperationParam unit="mfu1g">mfu1g.att144</OperationParam>
+      <Params>sp|cmplink|link|smc</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln33g</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

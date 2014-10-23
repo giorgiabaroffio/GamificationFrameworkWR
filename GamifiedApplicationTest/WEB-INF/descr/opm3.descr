@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.OperationModuleService">
+  <InputCollectorUnit name="" id="icu3">
+    <InputParameter id="icp7" name="BirthDate"/>
+    <InputParameter id="icp8" name="City"/>
+    <InputParameter id="icp9" name="Email"/>
+    <InputParameter id="icp10" name="Country"/>
+    <InputParameter id="icp11" name="First Name"/>
+    <InputParameter id="icp12" name="Last Name"/>
+    <InputParameter id="icp13" name="Iso Code"/>
+    <InputParameter id="icp14" name="Public Profile"/>
+    <InputParameter id="icp15" name="UserName"/>
+    <InputParameter id="icp16" name="Password"/>
+    <InputParameter id="icp17" name="GeoArea"/>
+    <InputParameter id="icp18" name="Internal"/>
+    <InputParameter id="icp5" name="Photo"/>
+  </InputCollectorUnit>
+  <OKCollectorUnits>okcu3</OKCollectorUnits>
+  <KOCollectorUnits/>
+  <OperationUnits>icu3|okcu3|tmu2|rru1</OperationUnits>
+</Descriptor>

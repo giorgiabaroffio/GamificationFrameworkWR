@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.operation.rtx.db.DeleteUnitService" name="Delete User Points">
+  <Entity>ent5g</Entity>
+  <CascadeDeleteRoles/>
+  <FetchMode>HQL</FetchMode>
+  <Query entity="ent5g">
+    <Input id="p0" param="acond10g" type="integer" implied="false" attribute="att17g"/>
+    <Output id="att17g" name="oid" index="0"/>
+    <HQL>select a_redeemUserReward.oid from RedeemUserReward a_redeemUserReward
+      <Where defaultPolicy="fill" allImplied="false">((a_redeemUserReward.oid is not null))</Where>
+    </HQL>
+  </Query>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Delete User Points</ModelName>
+    <ParentContainer>area1g</ParentContainer>
+    <NavigationAncestors>sv1|area1g</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <Params>cru5g.att19g|pwu5g.sortCriteria|cru5g.att18g|sp|cmplink|link|miu9g.icp50g|mssu1g.shownMessages|smc|miu9g.icp51g|pwu5g.newSortAttribute</Params>
+    </OperationParams>
+    <SecondaryIncomingLinks>ln24g</SecondaryIncomingLinks>
+    <OutgoingLinks>
+      <Link resultCode="success">oln54g</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

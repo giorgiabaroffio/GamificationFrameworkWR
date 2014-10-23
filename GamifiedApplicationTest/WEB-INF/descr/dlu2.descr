@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.operation.rtx.db.DeleteUnitService" name="Delete2">
+  <Entity>User</Entity>
+  <CascadeDeleteRoles/>
+  <FetchMode keyCondition="kcond4">HQL</FetchMode>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Delete2</ModelName>
+    <ParentContainer>opg2</ParentContainer>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="dlu2">kcond4.userOID</OperationParam>
+      <Params>link|sfld6_presel|fld17_slot|fld12_slot|pwu1.newSortAttribute|fld18_slot|fld10_slot|cmplink|fld24_slot|fld4_slot|fld26_slot|fld19_slot|pcp13|pcp12|pcp10|fld21_slot|pcp14|sp|pcp15|pcp9|sfld5_presel|pcp6|fld22_slot|pcp5|pcp8|mssu2.shownMessages|pwu1.sortCriteria|fld20_slot|pcp7|fld11_slot|fld23_slot|pcp2|fld16_slot|pcp4|pcp3|pwu1.block|smc|kcond3.userOID</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln14</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

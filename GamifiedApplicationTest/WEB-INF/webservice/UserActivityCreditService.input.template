@@ -1,0 +1,26 @@
+#?delimiters [%, %], [%=, %]
+<wr:Input name="name"/>
+<wr:Input name="time"/>
+<wr:Input name="nickname"/>
+<wr:Input name="description"/>
+<wr:Input name="link"/>
+<wr:Input name="gamifiedApplication"/>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://www.webratio.com/webservices/getUserActivityCredit">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:getUserActivityCredit>
+         <DATA>
+            <action>
+               <email>[%= inputParams.nickname %]</email>
+               <time>[%= inputParams.time %]</time>
+               <area>[%= inputParams.gamifiedApplication %]</area>
+               <name>[%= inputParams.name %]</name>
+               <description>[%= inputParams.description %]</description>
+               <tag> </tag>
+               <link>[%= inputParams.link %]</link>
+               <executor></executor>
+            </action>   
+         </DATA>
+      </get:getUserActivityCredit>
+   </soapenv:Body>
+</soapenv:Envelope>

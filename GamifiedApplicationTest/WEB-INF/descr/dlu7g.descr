@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.operation.rtx.db.DeleteUnitService" name="Delete Notification">
+  <Entity>ent3</Entity>
+  <CascadeDeleteRoles/>
+  <FetchMode>HQL</FetchMode>
+  <Query entity="ent3">
+    <Input id="p0" param="acond14g" type="integer" implied="false" attribute="att32"/>
+    <Output id="att32" name="oid" index="0"/>
+    <HQL>select a_notification.oid from Notification a_notification
+      <Where defaultPolicy="fill" allImplied="false">((a_notification.oid is not null))</Where>
+    </HQL>
+  </Query>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Delete Notification</ModelName>
+    <ParentContainer>sv1</ParentContainer>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <Params>mfu1g.att134|sp|mfu1g.att145|cmplink|mfu1g.att144|link|smc</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln32g</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

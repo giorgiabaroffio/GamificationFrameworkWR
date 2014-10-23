@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultLinkService">
+  <Target>page7</Target>
+  <Secure>false</Secure>
+  <Source>pwu1</Source>
+  <SourcePage>page2</SourcePage>
+  <ReachableAlternativePages></ReachableAlternativePages>
+  <Navigates>true</Navigates>
+  <StartsTransaction>false</StartsTransaction>
+  <EndsTransaction>false</EndsTransaction>
+  <StartPageIdRequiredByTarget>false</StartPageIdRequiredByTarget>
+  <PreservedContextParams>
+    <Params>pwu1.block|mssu2.shownMessages|pwu1.newSortAttribute|pwu1.sortCriteria</Params>
+  </PreservedContextParams>
+  <ContextPropagations>
+    <ContextPropagation targetParam="fld20_slot" sourceUnit="pwu1" sourceParam="data[].att31"/>
+    <ContextPropagation targetParam="fld21_slot" sourceUnit="pwu1" sourceParam="data[].att16"/>
+    <ContextPropagation targetParam="fld22_slot" sourceUnit="pwu1" sourceParam="data[].att18"/>
+    <ContextPropagation targetParam="fld19_slot" sourceUnit="pwu1" sourceParam="data[].email"/>
+    <ContextPropagation targetParam="fld17_slot" sourceUnit="pwu1" sourceParam="data[].att13"/>
+    <ContextPropagation targetParam="sfld6_presel" sourceUnit="pwu1" sourceParam="data[].att21"/>
+    <ContextPropagation targetParam="sfld5_presel" sourceUnit="pwu1" sourceParam="data[].att26"/>
+    <ContextPropagation targetParam="fld18_slot" sourceUnit="pwu1" sourceParam="data[].att14"/>
+    <ContextPropagation targetParam="fld26_slot" sourceUnit="pwu1" sourceParam="data[].userOID"/>
+    <ContextPropagation targetParam="fld23_slot" sourceUnit="pwu1" sourceParam="data[].att22"/>
+    <ContextPropagation targetParam="fld24_slot" sourceUnit="pwu1" sourceParam="data[].userName"/>
+    <ContextPropagation targetParam="fld11_slot" sourceUnit="pwu1" sourceParam="data[].att399"/>
+    <ContextPropagation targetParam="fld4_slot" sourceUnit="pwu1" sourceParam="data[].password"/>
+  </ContextPropagations>
+  <PageActions>
+    <Close pages=""/>
+    <Open page="page7"/>
+    <WindowConfiguration title="" width="800" height="600" resizable="true" autoResizing="false" closable="true" maximizable="false" minimizable="false" draggable="true" modal="true" className="" showEffect="fade" hideEffect="fade"/>
+  </PageActions>
+</Descriptor>

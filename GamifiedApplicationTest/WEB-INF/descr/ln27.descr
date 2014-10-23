@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultLinkService">
+  <Target>cru2</Target>
+  <Secure>false</Secure>
+  <Source>pcu3</Source>
+  <ReachableAlternativePages></ReachableAlternativePages>
+  <StartsTransaction>true</StartsTransaction>
+  <EndsTransaction>false</EndsTransaction>
+  <StartPageIdRequiredByTarget>true</StartPageIdRequiredByTarget>
+  <PreservedContextParams>
+    <Params/>
+  </PreservedContextParams>
+  <ContextPropagations>
+    <ContextPropagation targetParam="cru2.att31" sourceUnit="pcu3" sourceParam="pcp3"/>
+    <ContextPropagation targetParam="cru2.att16" sourceUnit="pcu3" sourceParam="pcp4"/>
+    <ContextPropagation targetParam="cru2.att18" sourceUnit="pcu3" sourceParam="pcp5"/>
+    <ContextPropagation targetParam="cru2.email" sourceUnit="pcu3" sourceParam="pcp6"/>
+    <ContextPropagation targetParam="cru2.att13" sourceUnit="pcu3" sourceParam="pcp7"/>
+    <ContextPropagation targetParam="cru2.att21" sourceUnit="pcu3" sourceParam="pcp8"/>
+    <ContextPropagation targetParam="cru2.att29" sourceUnit="pcu3" sourceParam="pcp15"/>
+    <ContextPropagation targetParam="cru2.att26" sourceUnit="pcu3" sourceParam="pcp9"/>
+    <ContextPropagation targetParam="cru2.att14" sourceUnit="pcu3" sourceParam="pcp10"/>
+    <ContextPropagation targetParam="cru2.password" sourceUnit="pcu3" sourceParam="pcp12"/>
+    <ContextPropagation targetParam="cru2.att22" sourceUnit="pcu3" sourceParam="pcp13"/>
+    <ContextPropagation targetParam="cru2.userName" sourceUnit="pcu3" sourceParam="pcp14"/>
+    <ContextPropagation targetParam="cru2.att399" sourceUnit="pcu3" sourceParam="pcp2"/>
+  </ContextPropagations>
+</Descriptor>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.utility.rtx.ScriptUnitService" name="Create JSON Request">
+  <Script xml:space="preserve">#input String[] action, String[] description, String[] area, String[] userEmail, Integer[] objectkey
+#input currentTs
+#output String json
+
+
+//import org.codehaus.jackson.JsonEncoding
+//import org.codehaus.jackson.JsonFactory
+//import org.codehaus.jackson.JsonGenerationException
+//import org.codehaus.jackson.JsonGenerator
+//import org.codehaus.jackson.map.JsonMappingException
+
+import com.fasterxml.jackson.core.JsonEncoding
+import com.fasterxml.jackson.core.JsonFactory
+import com.fasterxml.jackson.core.JsonGenerationException
+import com.fasterxml.jackson.core.JsonGenerator
+import com.fasterxml.jackson.databind.JsonMappingException
+
+import java.io.OutputStream
+import java.io.ByteArrayOutputStream
+import com.webratio.rtx.core.BeanHelper
+
+def json = null
+
+try {
+
+    OutputStream out = new ByteArrayOutputStream()
+    
+    JsonFactory jfactory = new JsonFactory();
+
+   
+    JsonGenerator jGenerator = jfactory.createJsonGenerator(out, JsonEncoding.UTF8);
+  //  jGenerator.writeStartObject(); // {
+
+  //  jGenerator.writeFieldName("actions");
+    jGenerator.writeStartArray(); 
+	action.eachWithIndex{obj, idx -&gt;
+	    jGenerator.writeStartObject(); 
+	    jGenerator.writeStringField("email", userEmail[idx] );  
+	    jGenerator.writeNumberField("time", currentTs.getTime()); 
+	    jGenerator.writeStringField("area", area[idx]);
+	    jGenerator.writeStringField("name", obj); 
+        jGenerator.writeStringField("description", description[idx]); 
+        jGenerator.writeStringField("tag", " "); 
+        jGenerator.writeStringField("link", " "); 
+        jGenerator.writeStringField("executor", " "); 
+        if(!BeanHelper.isNullOrEmptyArray(objectkey)){
+ 			jGenerator.writeNumberField("objectkey", objectkey[idx]);
+ 		}
+	    jGenerator.writeEndObject(); 
+	}
+	
+	 jGenerator.writeEndArray();
+	//jGenerator.writeEndObject();
+
+    jGenerator.close();
+    
+    json = out.toString()
+
+} catch (JsonGenerationException e) {
+
+    e.printStackTrace();
+
+} catch (JsonMappingException e) {
+
+    e.printStackTrace();
+
+} catch (IOException e) {
+
+    e.printStackTrace();
+
+}
+
+//println json
+
+return ["json": json]</Script>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Create JSON Request</ModelName>
+    <ParentContainer>opm2</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="scu1g">scu1g.userEmail</OperationParam>
+      <OperationParam unit="scu1g">scu1g.description</OperationParam>
+      <OperationParam unit="scu1g">scu1g.area</OperationParam>
+      <OperationParam unit="scu1g">scu1g.currentTs</OperationParam>
+      <OperationParam unit="scu1g">scu1g.objectkey</OperationParam>
+      <OperationParam unit="scu1g">scu1g.action</OperationParam>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln6g</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

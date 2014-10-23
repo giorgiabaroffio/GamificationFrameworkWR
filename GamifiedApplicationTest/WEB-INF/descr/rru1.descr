@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.ws.rtx.SoapRequestResponseUnitService" name="Call User Registration Service">
+  <OneWay>false</OneWay>
+  <RequestHeaders></RequestHeaders>
+  <Endpoint>${endpoint_registration_webservice}</Endpoint>
+  <SoapVersion>1.1</SoapVersion>
+  <SoapActionURI/>
+  <Method name="" nsURI=""/>
+  <WebServiceParameters></WebServiceParameters>
+  <CompressRequest/>
+  <Authentication signRequestMsg="false" httpAuthentication="false"/>
+  <Timeout/>
+  <SOTimeout/>
+  <RequestHeaders></RequestHeaders>
+  <SoapHeaders></SoapHeaders>
+  <Input type="document" transformer="WEB-INF/webservice/UserRegistrationService.input.template"/>
+  <Output fullEnvelope="" transformer=""/>
+  <InputTransformParameters>
+    <Parameter name="firstname"/>
+    <Parameter name="lastname"/>
+    <Parameter name="username"/>
+    <Parameter name="password"/>
+    <Parameter name="city"/>
+    <Parameter name="birthdate"/>
+    <Parameter name="isocode"/>
+    <Parameter name="country"/>
+    <Parameter name="geoarea"/>
+    <Parameter name="publicprofile"/>
+    <Parameter name="email"/>
+    <Parameter name="photo"/>
+    <Parameter name="internal"/>
+  </InputTransformParameters>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Call User Registration Service</ModelName>
+    <ParentContainer>opm3</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="rru1">rru1.photo</OperationParam>
+      <OperationParam unit="rru1">rru1.isocode</OperationParam>
+      <OperationParam unit="rru1">rru1.lastname</OperationParam>
+      <OperationParam unit="rru1">rru1.geoarea</OperationParam>
+      <OperationParam unit="rru1">rru1.internal</OperationParam>
+      <OperationParam unit="rru1">rru1.email</OperationParam>
+      <OperationParam unit="rru1">rru1.publicprofile</OperationParam>
+      <OperationParam unit="rru1">rru1.firstname</OperationParam>
+      <OperationParam unit="rru1">rru1.birthdate</OperationParam>
+      <OperationParam unit="rru1">rru1.country</OperationParam>
+      <OperationParam unit="rru1">rru1.username</OperationParam>
+      <OperationParam unit="rru1">rru1.city</OperationParam>
+      <OperationParam unit="rru1">rru1.password</OperationParam>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln24</Link>
+      <Link resultCode="error">kln6</Link>
+    </OutgoingLinks>
+    <IsLinkHistoryRecorded>true</IsLinkHistoryRecorded>
+  </WRParameterService>
+</Descriptor>

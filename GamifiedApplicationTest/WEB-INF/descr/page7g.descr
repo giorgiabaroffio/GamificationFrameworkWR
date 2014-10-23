@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultPageService" name="Redeem  User Reward">
+  <ParentContainer>area1g</ParentContainer>
+  <Secure>false</Secure>
+  <Localized>false</Localized>
+  <CheckPermission>false</CheckPermission>
+  <Alternatives/>
+  <ProtectedSubPages/>
+  <Navigations knownEffects="#pr#">
+    <Navigation name="0" nonContextual="true" interPage="always" links="page7g"/>
+    <Navigation name="1" nonContextual="true" interPage="always" links="page7g.link"/>
+    <Navigation name="2" links="page7g.auto-link"/>
+    <Navigation name="3" links="page7g.auto-link" selectiveRefresh="true"/>
+    <Navigation name="4" links="ln23g|validation-failed"/>
+    <Navigation name="5" links="ln23g|impl" postPropagatedLink="ln23g"/>
+    <Navigation name="6" links="ln23g|kln15g"/>
+    <Navigation name="7" links="ln23g|oln55g"/>
+    <Navigation name="8" links="pwu5gatt18g"/>
+    <Navigation name="9" links="pwu5gatt19g"/>
+  </Navigations>
+  <ContextInitServices/>
+  <ContextInits></ContextInits>
+  <UselessPreserves>
+    <UselessPreserve navs="2|7|6|5|4|9|8" effects="-" futile=""/>
+    <UselessPreserve navs="7|6|5|4|9|8" effects="#pr#" futile=""/>
+    <UselessPreserve navs="3|2" effects="#pr#" futile="pwu5g.newSortAttribute|pwu5g.sortCriteria"/>
+    <UselessPreserve navs="3" effects="-" futile="mssu1g.shownMessages|pwu5g.newSortAttribute|pwu5g.sortCriteria"/>
+  </UselessPreserves>
+  <LinkSequence>ln24g</LinkSequence>
+  <UnitComputations>
+    <UnitComputation unit="enu5g" formBased="true">
+      <NavigationCondition selectiveRefresh="true" effects="#pr#"/>
+      <RefreshFormAll navs="1|0|7|6|5"/>
+    </UnitComputation>
+    <UnitComputation unit="pwu5g" formBased="true">
+      <NavigationCondition selectiveRefresh="true" effects="#pr#"/>
+      <RefreshFormAll navs="1|0|7|6|5"/>
+      <RefreshForm navs="9|8" inputs="pwu5g.newSortAttribute|pwu5g.sortCriteria"/>
+    </UnitComputation>
+    <UnitComputation unit="mssu1g">
+      <NavigationCondition selectiveRefresh="true" effects="#pr#"/>
+    </UnitComputation>
+  </UnitComputations>
+  <ManualLinks>
+    <ManualLink>ln23g</ManualLink>
+    <ManualLink>pwu5gatt18g</ManualLink>
+    <ManualLink>pwu5gatt19g</ManualLink>
+  </ManualLinks>
+  <Variables></Variables>
+  <Conditions></Conditions>
+  <Layouts>
+    <Layout id="page7g_grid_0">
+      <Layout id="page7g_cell_0">
+        <Layout id="enu5g_0" unitId="enu5g"></Layout>
+      </Layout>
+      <Layout id="page7g_cell_12">
+        <Layout id="mssu1g_0" unitId="mssu1g"></Layout>
+      </Layout>
+      <Layout id="page7g_cell_24">
+        <Layout id="pwu5g_0" unitId="pwu5g"></Layout>
+      </Layout>
+    </Layout>
+  </Layouts>
+  <AutoLinkInfo>
+    <PreservedContextParams>
+      <Params>mssu1g.shownMessages|pwu5g.newSortAttribute|pwu5g.sortCriteria</Params>
+    </PreservedContextParams>
+    <PreservedContextParams selectiveRefresh="true">
+      <Params>mssu1g.shownMessages</Params>
+    </PreservedContextParams>
+  </AutoLinkInfo>
+  <!--Page Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultPageParameterService">
+    <ModelName>Redeem User Reward</ModelName>
+    <NavigationAncestors>sv1|area1g</NavigationAncestors>
+    <LinkIdRequired>true</LinkIdRequired>
+    <PageParams>
+      <PageParam unit="pwu5g">pwu5g.newSortAttribute</PageParam>
+      <PageParam unit="pwu5g">pwu5g.sortCriteria</PageParam>
+      <PageParam unit="mssu1g">mssu1g.shownMessages</PageParam>
+      <PageParam>miu9g.icp50g</PageParam>
+      <PageParam>miu9g.icp51g</PageParam>
+      <PageParam>link</PageParam>
+      <PageParam>nav</PageParam>
+      <PageParam>so</PageParam>
+      <PageParam>ajax</PageParam>
+      <PageParam>ajaxRefresh</PageParam>
+    </PageParams>
+  </WRParameterService>
+</Descriptor>

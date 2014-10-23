@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.ws.rtx.RestFulRequestResponseUnitService" name="Get User Rewards">
+  <Endpoint>${endpoint_get_user_rewards_webserviceREST}</Endpoint>
+  <RequestMethod>GET</RequestMethod>
+  <RequestContentType/>
+  <ResponseContentType>JSON</ResponseContentType>
+  <RequestHeaders></RequestHeaders>
+  <QueryStringParameters>
+    <QueryStringParameter id="rrp8g" name="userEmail" minCard="1" maxCard="1" _sel="t"/>
+  </QueryStringParameters>
+  <RequestBodyParameters></RequestBodyParameters>
+  <ResponseBodyParameters></ResponseBodyParameters>
+  <ResponseHeaders></ResponseHeaders>
+  <CompressRequest>false</CompressRequest>
+  <Authentication httpAuthentication="false"/>
+  <Timeout/>
+  <SOTimeout/>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Get User Rewards</ModelName>
+    <ParentContainer>opg3g</ParentContainer>
+    <NavigationAncestors/>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="rfrr10g">rrp8g</OperationParam>
+      <Params/>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln48g</Link>
+      <Link resultCode="error">kln13g</Link>
+    </OutgoingLinks>
+    <IsLinkHistoryRecorded>true</IsLinkHistoryRecorded>
+  </WRParameterService>
+</Descriptor>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultLinkService">
+  <Target>mfu2</Target>
+  <Secure>false</Secure>
+  <Source>pcu3</Source>
+  <ReachableAlternativePages></ReachableAlternativePages>
+  <StartsTransaction>true</StartsTransaction>
+  <EndsTransaction>false</EndsTransaction>
+  <StartPageIdRequiredByTarget>true</StartPageIdRequiredByTarget>
+  <PreservedContextParams>
+    <Params/>
+  </PreservedContextParams>
+  <ContextPropagations>
+    <ContextPropagation targetParam="mfu2.att31" sourceUnit="pcu3" sourceParam="pcp3"/>
+    <ContextPropagation targetParam="mfu2.att16" sourceUnit="pcu3" sourceParam="pcp4"/>
+    <ContextPropagation targetParam="mfu2.att18" sourceUnit="pcu3" sourceParam="pcp5"/>
+    <ContextPropagation targetParam="mfu2.email" sourceUnit="pcu3" sourceParam="pcp6"/>
+    <ContextPropagation targetParam="mfu2.att13" sourceUnit="pcu3" sourceParam="pcp7"/>
+    <ContextPropagation targetParam="mfu2.att21" sourceUnit="pcu3" sourceParam="pcp8"/>
+    <ContextPropagation targetParam="mfu2.att29" sourceUnit="pcu3" sourceParam="pcp15"/>
+    <ContextPropagation targetParam="kcond2.userOID" sourceUnit="pcu3" sourceParam="pcp11"/>
+    <ContextPropagation targetParam="mfu2.att14" sourceUnit="pcu3" sourceParam="pcp10"/>
+    <ContextPropagation targetParam="mfu2.password" sourceUnit="pcu3" sourceParam="pcp12"/>
+    <ContextPropagation targetParam="mfu2.att22" sourceUnit="pcu3" sourceParam="pcp13"/>
+    <ContextPropagation targetParam="mfu2.userName" sourceUnit="pcu3" sourceParam="pcp14"/>
+    <ContextPropagation targetParam="mfu2.att26" sourceUnit="pcu3" sourceParam="pcp9"/>
+    <ContextPropagation targetParam="mfu2.att399" sourceUnit="pcu3" sourceParam="pcp2"/>
+  </ContextPropagations>
+</Descriptor>

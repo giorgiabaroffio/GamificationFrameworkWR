@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.operation.rtx.db.CreateUnitService" name="Redeem User Reward">
+  <Entity>ent5g</Entity>
+  <BulkInsert>false</BulkInsert>
+  <SkipBlankRecords>false</SkipBlankRecords>
+  <DeleteAllBefore/>
+  <Field param="cru5g.att17g" type="integer" attribute="att17g">oid</Field>
+  <Field param="cru5g.att18g" type="string" attribute="att18g">userEmail</Field>
+  <Field param="cru5g.att19g" type="decimal" attribute="att19g">creditsAvailable</Field>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Redeem User Reward</ModelName>
+    <ParentContainer>area1g</ParentContainer>
+    <NavigationAncestors>sv1|area1g</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="cru5g">cru5g.att19g</OperationParam>
+      <OperationParam unit="cru5g">cru5g.att18g</OperationParam>
+      <Params>pwu5g.sortCriteria|sp|cmplink|link|miu9g.icp50g|mssu1g.shownMessages|smc|miu9g.icp51g|pwu5g.newSortAttribute</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln55g</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

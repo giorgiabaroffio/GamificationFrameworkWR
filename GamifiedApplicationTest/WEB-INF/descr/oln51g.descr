@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultLinkService">
+  <Target>rfrr11g</Target>
+  <Secure>false</Secure>
+  <Source>icu13g</Source>
+  <ReachableAlternativePages></ReachableAlternativePages>
+  <Navigates>true</Navigates>
+  <StartsTransaction>false</StartsTransaction>
+  <EndsTransaction>false</EndsTransaction>
+  <StartPageIdRequiredByTarget>true</StartPageIdRequiredByTarget>
+  <PreservedContextParams>
+    <Params/>
+  </PreservedContextParams>
+  <ContextPropagations>
+    <ContextPropagation targetParam="rrp11g.JSON$idReward" sourceUnit="icu13g" sourceParam="icp51g"/>
+    <ContextPropagation targetParam="rrp11g.JSON$userEmail" sourceUnit="icu13g" sourceParam="icp50g"/>
+  </ContextPropagations>
+</Descriptor>

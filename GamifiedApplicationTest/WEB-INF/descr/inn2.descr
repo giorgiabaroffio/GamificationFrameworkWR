@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.controlflow.rtx.IsNotNullUnitService" name="Modify?">
+  <Unit emptyStringAsNull=""/>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Modify?</ModelName>
+    <ParentContainer>opg1</ParentContainer>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <OperationParam unit="inn2">inn2.isnotnull</OperationParam>
+      <Params>cru2.att13|kcond2.userOID|cru2.att14|cru2.att16|mfu2.att399|cru2.att18|acond5|sfld6_presel|fld17_slot|miu1g.icp22g|fld12_slot|mfu2.email|miu1g.icp16g|miu3.icp29g|miu3.icp37g|fld4_slot|fld26_slot|miu3.icp33g|pcp13|pcp12|cru2.att21|pcp11|cru2.email|cru2.att22|pcp10|miu1g.icp26g|sp|miu1g.icp21g|inn1.isnotnull|miu1g.icp19g|fld22_slot|mssu2.shownMessages|miu3.icp36g|mfu2.att31|fld16_slot|miu3.icp32g|miu1g.icp20g|pwu1.block|miu1g.icp25g|kcond3.userOID|miu3.icp41g|miu3.icp31g|cru2.userName|link|cru2.password|miu1g.icp18g|mfu2.att29|miu1g.icp24g|mfu2.att26|pwu1.newSortAttribute|fld18_slot|mfu2.att22|cmplink|fld10_slot|mfu2.att21|fld24_slot|miu3.icp35g|fld19_slot|miu1g.icp28g|cru2.att29|fld21_slot|cru2.att26|pcp14|pcp15|miu3.icp40g|miu1g.icp17g|miu3.icp30g|mfu2.att18|mfu2.password|miu3.icp39g|mfu2.att14|miu3.icp38g|pcp9|sfld5_presel|miu1g.icp23g|mfu2.att16|mfu2.userName|pcp6|pcp5|fld20_slot|mfu2.att13|pcp8|pwu1.sortCriteria|fld11_slot|pcp7|pcp2|fld23_slot|pcp4|pcp3|cru2.att399|cru2.att31|miu3.icp34g|smc|miu1g.icp27g</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln30</Link>
+      <Link resultCode="error">kln7</Link>
+    </OutgoingLinks>
+    <IsLinkHistoryRecorded>true</IsLinkHistoryRecorded>
+  </WRParameterService>
+</Descriptor>

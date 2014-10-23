@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.operation.rtx.db.DeleteUnitService" name="Delete Reward Instance">
+  <Entity>ent4</Entity>
+  <CascadeDeleteRoles/>
+  <FetchMode>HQL</FetchMode>
+  <Query entity="ent4">
+    <Input id="p0" param="acond13g" type="integer" implied="false" attribute="att38"/>
+    <Output id="att38" name="oid" index="0"/>
+    <HQL>select a_rewardInstance.oid from RewardInstance a_rewardInstance
+      <Where defaultPolicy="fill" allImplied="false">((a_rewardInstance.oid is not null))</Where>
+    </HQL>
+  </Query>
+  <!--Operation Parameter Service-->
+  <WRParameterService service="com.webratio.rtx.core.DefaultOperationParameterService">
+    <ModelName>Delete Reward Instance</ModelName>
+    <ParentContainer>sv1</ParentContainer>
+    <NavigationAncestors>sv1</NavigationAncestors>
+    <Secure>false</Secure>
+    <Localized>false</Localized>
+    <CheckPermission>false</CheckPermission>
+    <StartsTransaction>false</StartsTransaction>
+    <LinkIdRequired>true</LinkIdRequired>
+    <OperationParams>
+      <Params>mfu1g.att134|sp|mfu1g.att145|cmplink|mfu1g.att144|link|smc</Params>
+    </OperationParams>
+    <OutgoingLinks>
+      <Link resultCode="success">oln25g</Link>
+    </OutgoingLinks>
+  </WRParameterService>
+</Descriptor>

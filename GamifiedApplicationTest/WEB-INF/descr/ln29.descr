@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.rtx.core.DefaultLinkService">
+  <Target>miu3</Target>
+  <Secure>false</Secure>
+  <Source>pcu3</Source>
+  <ReachableAlternativePages></ReachableAlternativePages>
+  <StartsTransaction>true</StartsTransaction>
+  <EndsTransaction>false</EndsTransaction>
+  <StartPageIdRequiredByTarget>true</StartPageIdRequiredByTarget>
+  <PreservedContextParams>
+    <Params/>
+  </PreservedContextParams>
+  <ContextPropagations>
+    <ContextPropagation targetParam="miu3.icp29g" sourceUnit="pcu3" sourceParam="pcp3"/>
+    <ContextPropagation targetParam="miu3.icp30g" sourceUnit="pcu3" sourceParam="pcp4"/>
+    <ContextPropagation targetParam="miu3.icp32g" sourceUnit="pcu3" sourceParam="pcp5"/>
+    <ContextPropagation targetParam="miu3.icp31g" sourceUnit="pcu3" sourceParam="pcp6"/>
+    <ContextPropagation targetParam="miu3.icp33g" sourceUnit="pcu3" sourceParam="pcp7"/>
+    <ContextPropagation targetParam="miu3.icp39g" sourceUnit="pcu3" sourceParam="pcp8"/>
+    <ContextPropagation targetParam="miu3.icp40g" sourceUnit="pcu3" sourceParam="pcp15"/>
+    <ContextPropagation targetParam="miu3.icp35g" sourceUnit="pcu3" sourceParam="pcp9"/>
+    <ContextPropagation targetParam="miu3.icp34g" sourceUnit="pcu3" sourceParam="pcp10"/>
+    <ContextPropagation targetParam="miu3.icp38g" sourceUnit="pcu3" sourceParam="pcp12"/>
+    <ContextPropagation targetParam="miu3.icp41g" sourceUnit="pcu3" sourceParam="pcp2"/>
+    <ContextPropagation targetParam="miu3.icp36g" sourceUnit="pcu3" sourceParam="pcp13"/>
+    <ContextPropagation targetParam="miu3.icp37g" sourceUnit="pcu3" sourceParam="pcp14"/>
+  </ContextPropagations>
+</Descriptor>
